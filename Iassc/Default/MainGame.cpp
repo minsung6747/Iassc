@@ -4,6 +4,8 @@
 #include "CollisionMgr.h"
 #include "ObjMgr.h"
 #include "KeyMgr.h"
+#include "BmpMgr.h"
+#include "SceneMgr.h"
 
 CMainGame::CMainGame()
 	: m_dwTime(GetTickCount())
@@ -21,17 +23,17 @@ CMainGame::~CMainGame()
 void CMainGame::Initialize(void)
 {
 	m_hDC = GetDC(g_hWnd);
+	CSceneMgr::Get_Instance()->Scene_Change(SC_LOGO);
 
-
-	m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create());
-	dynamic_cast<CPlayer*>(m_ObjList[OBJ_PLAYER].front())->Set_BulletList(&m_ObjList[OBJ_BULLET]);
+	/*m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create());
+	dynamic_cast<CPlayer*>(m_ObjList[OBJ_PLAYER].front())->Set_BulletList(&m_ObjList[OBJ_BULLET]);*/
 	
 }
 
 void CMainGame::Update(void)
 {
-
-	for (int i = 0; i < OBJ_END; ++i)
+	CSceneMgr::Get_Instance()->Update();
+	/*for (int i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& iter = m_ObjList[i].begin();
 			iter != m_ObjList[i].end(); )
@@ -46,7 +48,7 @@ void CMainGame::Update(void)
 			else
 				++iter;
 		}
-	}
+	}*/
 	
 }
 
@@ -57,28 +59,31 @@ void CMainGame::Late_Update(void)
 // 
 // 	for (auto& iter : m_BulletList)
 // 		iter->Late_Update();*/
-	for (int i = 0; i < OBJ_END; ++i)
+	/*for (int i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& iter : m_ObjList[i])
 			iter->Late_Update();
-	}
+	}*/
 }
 
 void CMainGame::Render(void)
 {
-	Rectangle(m_hDC, 0, 0, WINCX, WINCY);
-	Rectangle(m_hDC, 100, 100, WINCX - 100, WINCY - 100);
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Logo");
+	BitBlt(m_hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY);
+	CSceneMgr::Get_Instance()->Render(hMemDC);
+	/*Rectangle(m_hDC, 0, 0, WINCX, WINCY);
+	Rectangle(m_hDC, 100, 100, WINCX - 100, WINCY - 100);*/
 
 	/*m_pPlayer->Render(m_hDC);
 
 	for (auto& iter : m_BulletList)
 		iter->Render(m_hDC);*/
 	
-	for (int i = 0; i < OBJ_END; ++i)
+	/*for (int i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& iter : m_ObjList[i])
 			iter->Render(m_hDC);
-	}
+	}*/
 
 
 	// 폰트 출력
@@ -121,14 +126,17 @@ void CMainGame::Release(void)
 
 	m_BulletList.clear();*/
 
-	for (int i = 0; i < OBJ_END; ++i)
+	/*for (int i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& iter : m_ObjList[i])
 			Safe_Delete<CObj*>(iter);
 
 		m_ObjList[i].clear();
-	}
-
+	}*/
+	CObjMgr::Get_Instance()->Destroy_Instance();
+	CKeyMgr::Get_Instance()->Destroy_Instance();
+	CSceneMgr::Get_Instance()->Destroy_Instance();
+	CBmpMgr::Get_Instance()->Destroy_Instance();
 	ReleaseDC(g_hWnd, m_hDC);	
 }
 

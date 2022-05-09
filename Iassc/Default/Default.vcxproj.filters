@@ -49,6 +49,18 @@
     <Filter Include="98. Design\ObjMgr">
       <UniqueIdentifier>{00246e03-9192-4d61-8608-47a219335240}</UniqueIdentifier>
     </Filter>
+    <Filter Include="98. Design\SceneMgr">
+      <UniqueIdentifier>{056ea760-8a1d-4155-8c27-913086121f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene">
+      <UniqueIdentifier>{7a5823f0-a853-4320-97ce-dd31672a3cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\00.Logo">
+      <UniqueIdentifier>{b89b4896-2a46-47f4-8314-d7ef8cdac37f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\05. MyButton">
+      <UniqueIdentifier>{8a2cfec8-247c-4eb7-8b20-8af33d595b03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -111,6 +123,18 @@
     <ClInclude Include="ObjMgr.h">
       <Filter>98. Design\ObjMgr</Filter>
     </ClInclude>
+    <ClInclude Include="SceneMgr.h">
+      <Filter>98. Design\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>98. Design\SceneMgr</Filter>
+    </ClInclude>
+    <ClInclude Include="Logo.h">
+      <Filter>98. Design\SceneMgr\00.Scene\00.Logo</Filter>
+    </ClInclude>
+    <ClInclude Include="MyButton.h">
+      <Filter>01. Obj\05. MyButton</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -145,6 +169,18 @@
     </ClCompile>
     <ClCompile Include="ObjMgr.cpp">
       <Filter>98. Design\ObjMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMgr.cpp">
+      <Filter>98. Design\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>98. Design\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Logo.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\00.Logo</Filter>
+    </ClCompile>
+    <ClCompile Include="MyButton.cpp">
+      <Filter>01. Obj\05. MyButton</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
