@@ -38,6 +38,12 @@ public:
 	virtual		void	Late_Update(void)	PURE;
 	virtual		void	Render(HDC hDC)		PURE;
 	virtual		void	Release(void)		PURE;
+	
+public:
+	virtual void OnCollision() {};
+	virtual void OnCollision(DIRECTION eDir) {};
+	virtual void OnCollision(CObj* other) {};
+	virtual void OnCollision(DIRECTION eDir, CObj* other) {};
 
 protected:
 	void		Update_Rect(void);

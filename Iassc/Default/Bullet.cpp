@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Bullet.h"
 #include "BmpMgr.h"
+#include "Block.h"
 
 CBullet::CBullet()
 {
@@ -102,4 +103,9 @@ void CBullet::Render(HDC hDC)
 void CBullet::Release(void)
 {
 	
+}
+
+void CBullet::OnCollision(CObj* other)
+{
+	Set_Dead();
 }

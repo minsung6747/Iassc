@@ -22,8 +22,8 @@ void CCollisionMgr::Collision_Rect(list<CObj*> _Dest, list<CObj*> _Sour)
 		{
 			if (IntersectRect(&rc, &(Dest->Get_Rect()), &(Sour->Get_Rect())))
 			{
-				Dest->Set_Dead();
-				Sour->Set_Dead();
+				Dest->OnCollision(Sour);
+				Sour->OnCollision(Dest);
 			}
 		}
 	}
@@ -40,7 +40,7 @@ void CCollisionMgr::Collision_RectEx(list<CObj*> _Dest, list<CObj*> _Sour)
 			if (Check_Rect(Dest, Sour, &fX, &fY))
 			{
 					//Dest->Set_Dead();
-					Sour->Set_Dead();
+					//Sour->Set_Dead();
 
 					// 상하 충돌
 				if (fX > fY)
@@ -69,7 +69,59 @@ void CCollisionMgr::Collision_RectEx(list<CObj*> _Dest, list<CObj*> _Sour)
 		}
 	}
 }
+void CCollisionMgr::Collision_RectEx(list<CObj*> _Dest, list<CObj*> _Sour, bool _bIsPush)
+{
+	for (auto& Dest : _Dest)
+	{
+		for (auto& Sour : _Sour)
+		{
+			float	fX = 0.f, fY = 0.f;
 
+			if (Check_Rect(Dest, Sour, &fX, &fY))
+			{
+				// 상하 충돌
+				if (fX > fY)
+				{
+					// 상 충돌
+					if (Dest->Get_Info().fY > Sour->Get_Info().fY)
+					{
+						if (_bIsPush) Sour->Set_PosY(-fY);
+						Dest->OnCollision(DIR_UP, Sour);
+						Sour->OnCollision(DIR_UP, Dest);
+					}
+
+					else // 하 충돌
+					{
+						if (_bIsPush) Sour->Set_PosY(fY);
+						Dest->OnCollision(DIR_DOWN, Sour);
+						Sour->OnCollision(DIR_DOWN, Dest);
+					}
+				}
+				// 좌우 충돌
+				else
+				{
+					// 좌 충돌
+					if (Dest->Get_Info().fX > Sour->Get_Info().fX)
+					{
+						if (_bIsPush) Sour->Set_PosX(-fX);
+						Dest->OnCollision(DIR_LEFT, Sour);
+						Sour->OnCollision(DIR_LEFT, Dest);
+					}
+
+
+					// 우 충돌
+					else
+					{
+						if (_bIsPush) Sour->Set_PosX(fX);
+						Dest->OnCollision(DIR_RIGHT, Sour);
+						Sour->OnCollision(DIR_RIGHT, Dest);
+					}
+
+				}
+			}
+		}
+	}
+}
 bool CCollisionMgr::Check_Rect(CObj* pDest, CObj* pSour, float* pX, float* pY)
 {
 	float		fWidth = abs(pDest->Get_Info().fX - pSour->Get_Info().fX);
