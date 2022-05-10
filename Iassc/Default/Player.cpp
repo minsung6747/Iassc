@@ -45,11 +45,11 @@ int CPlayer::Update(void)
 
 void CPlayer::Late_Update(void)
 {
-	//if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right ||
-	//	100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
-	//{
-	//	m_bDead = true;
-	//}
+	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right ||
+		100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
+	{
+		
+	}
 }
 
 void CPlayer::Render(HDC hDC)
@@ -78,16 +78,32 @@ void CPlayer::Key_Input(void)
 {
 	// GetKeyState
 	if (GetAsyncKeyState(VK_LEFT))
-		m_tInfo.fX -= m_fSpeed;
+	{
+		if (m_tInfo.fX >= 100)
+		{
+			m_tInfo.fX -= m_fSpeed;
+		}
+		
+	}
 
 	if (GetAsyncKeyState(VK_RIGHT))
-		m_tInfo.fX += m_fSpeed;
+		if (m_tInfo.fX <= 700)
+		{
+			m_tInfo.fX += m_fSpeed;
+		}
 
 	if (GetAsyncKeyState(VK_UP))
-		m_tInfo.fY -= m_fSpeed;
+		if (m_tInfo.fY >= 200)
+		{
+			m_tInfo.fY -= m_fSpeed;
+		}
 
 	if (GetAsyncKeyState(VK_DOWN))
-		m_tInfo.fY += m_fSpeed;
+		if (m_tInfo.fY <= 490)
+		{
+			m_tInfo.fY += m_fSpeed;
+		}
+		
 
 	if (CKeyMgr::Get_Instance()->Key_Up('W'))
 		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_UP));
