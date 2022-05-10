@@ -5,6 +5,8 @@
 class CPlayer : public CObj
 {
 public:
+	enum STATE { IDLE,	WALK,SHOT, END };
+public:
 	CPlayer();
 	virtual ~CPlayer();
 
@@ -24,11 +26,16 @@ public:
 private:
 	void		Key_Input(void);
 	CObj*		Create_Bullet(DIRECTION eDir);
-
+	void		Motion_Change(void);
 
 private:
 	typedef list<CObj*>		BULLETLIST;
 	BULLETLIST*				m_pBullet;
+
+
+
+	STATE					m_ePreState;
+	STATE					m_eCurState;
 };
 
 /*

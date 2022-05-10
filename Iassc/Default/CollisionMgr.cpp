@@ -39,8 +39,8 @@ void CCollisionMgr::Collision_RectEx(list<CObj*> _Dest, list<CObj*> _Sour)
 
 			if (Check_Rect(Dest, Sour, &fX, &fY))
 			{
-				/*	Dest->Set_Dead();
-					Sour->Set_Dead();*/
+					//Dest->Set_Dead();
+					Sour->Set_Dead();
 
 					// 상하 충돌
 				if (fX > fY)

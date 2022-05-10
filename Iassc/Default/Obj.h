@@ -30,6 +30,8 @@ public:
 	const INFO& Get_Info(void) const { return m_tInfo; }
 	const RECT& Get_Rect(void) const { return m_tRect; }
 
+	
+
 public:
 	virtual		void	Initialize(void)	PURE;
 	virtual		int		Update(void)		PURE;
@@ -39,10 +41,12 @@ public:
 
 protected:
 	void		Update_Rect(void);
+	void		Move_Frame(void);
 
 protected:
 	INFO		m_tInfo;
 	RECT		m_tRect;
+	FRAME		m_tFrame;
 
 	float		m_fSpeed;
 	float		m_fAngle;
@@ -52,6 +56,8 @@ protected:
 
 	CObj* m_pTarget;
 	TCHAR* m_pFrameKey;
+
+	
 
 };
 

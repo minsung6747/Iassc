@@ -20,7 +20,7 @@ void CBullet::Initialize(void)
 
 	m_fSpeed = 3.f;
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Bullet.bmp", L"Bullet");
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/BulletDie.bmp", L"BulletDie");
+	//CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/BulletDie.bmp", L"BulletDie");
 
 }
 
@@ -59,7 +59,7 @@ int CBullet::Update(void)
 void CBullet::Late_Update(void)
 {
 	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right ||
-		100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
+		180 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
 	{
 		m_bDead=true;
 	}

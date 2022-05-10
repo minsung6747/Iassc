@@ -6,6 +6,8 @@
 #include "Player.h"
 #include "AbstractFactory.h"
 #include "Bullet.h"
+#include "Block.h"
+
 CStage::CStage()
 {
 }
@@ -20,11 +22,14 @@ void CStage::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage.bmp", L"Stage");
 	CObj* pPlayer = CAbstractFactory<CPlayer>::Create();
 	//CObj* pBullet = CAbstractFactory<CBullet>::Create();
+	CObj* pBlock = CAbstractFactory<CBlock>::Create(300,400);
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pPlayer);
+	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, pBlock);
+
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pBullet);
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create(200.f,400.f));
-	dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
+	//dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
 
 }
 

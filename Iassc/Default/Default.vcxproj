@@ -148,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
+    <ClInclude Include="Block.h" />
     <ClInclude Include="BmpMgr.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
@@ -175,6 +176,7 @@
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BmpMgr.cpp" />
+    <ClCompile Include="Block.cpp" />
     <ClCompile Include="Stage.cpp" />
     <ClCompile Include="MyButton.cpp" />
     <ClCompile Include="Logo.cpp" />

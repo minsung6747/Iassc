@@ -64,6 +64,9 @@
     <Filter Include="98. Design\SceneMgr\00.Scene\01.Stage">
       <UniqueIdentifier>{e1fe0654-c636-423f-ace8-fb4d798a46d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\04. Block">
+      <UniqueIdentifier>{15ebcb00-26a2-468c-ac50-b4b9f66286e6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -141,6 +144,9 @@
     <ClInclude Include="Stage.h">
       <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
     </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>01. Obj\04. Block</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -179,9 +185,6 @@
     <ClCompile Include="SceneMgr.cpp">
       <Filter>98. Design\SceneMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
-      <Filter>98. Design\SceneMgr</Filter>
-    </ClCompile>
     <ClCompile Include="Logo.cpp">
       <Filter>98. Design\SceneMgr\00.Scene\00.Logo</Filter>
     </ClCompile>
@@ -190,6 +193,12 @@
     </ClCompile>
     <ClCompile Include="Stage.cpp">
       <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>98. Design\SceneMgr</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>01. Obj\04. Block</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
