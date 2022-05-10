@@ -26,12 +26,11 @@ void CLogo::Update(void)
 
 void CLogo::Late_Update(void)
 {
-	/*if (CKeyMgr::Get_Instance()->Key_Down(VK_RETURN))
+	if (CKeyMgr::Get_Instance()->Key_Down(VK_RETURN))
 	{
-		CSceneMgr::Get_Instance()->Scene_Change(SC_MENU);
-
+		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE);
 		return;
-	}*/
+	}
 }
 
 void CLogo::Render(HDC hDC)

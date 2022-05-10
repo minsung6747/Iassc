@@ -61,6 +61,9 @@
     <Filter Include="01. Obj\05. MyButton">
       <UniqueIdentifier>{8a2cfec8-247c-4eb7-8b20-8af33d595b03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\01.Stage">
+      <UniqueIdentifier>{e1fe0654-c636-423f-ace8-fb4d798a46d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -135,6 +138,9 @@
     <ClInclude Include="MyButton.h">
       <Filter>01. Obj\05. MyButton</Filter>
     </ClInclude>
+    <ClInclude Include="Stage.h">
+      <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -181,6 +187,9 @@
     </ClCompile>
     <ClCompile Include="MyButton.cpp">
       <Filter>01. Obj\05. MyButton</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

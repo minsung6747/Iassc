@@ -14,6 +14,7 @@ CBullet::~CBullet()
 
 void CBullet::Initialize(void)
 {
+	m_bDead = false;
 	m_tInfo.fCX = 27.f;
 	m_tInfo.fCY = 27.f;
 
@@ -57,7 +58,9 @@ void CBullet::Late_Update(void)
 {
 	if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right ||
 		100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
-		m_bDead = true; 
+	{
+		m_bDead=true;
+	}
 }
 
 void CBullet::Render(HDC hDC)

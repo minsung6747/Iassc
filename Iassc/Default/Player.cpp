@@ -3,6 +3,9 @@
 #include "AbstractFactory.h"
 #include "BmpMgr.h"
 #include "KeyMgr.h"
+#include "Bullet.h"
+#include "ObjMgr.h"
+
 CPlayer::CPlayer()
 {
 }
@@ -17,10 +20,10 @@ void CPlayer::Initialize(void)
 	m_tInfo.fX = 400.f;
 	m_tInfo.fY = 300.f;
 
-	m_tInfo.fCX = 84.f;
-	m_tInfo.fCY = 92.f;
+	m_tInfo.fCX = 60.f;
+	m_tInfo.fCY = 65.f;
 
-	m_fSpeed = 10.f; 
+	m_fSpeed = 5.f; 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Iassc.bmp", L"Player");
 }
 
@@ -42,7 +45,11 @@ int CPlayer::Update(void)
 
 void CPlayer::Late_Update(void)
 {
-
+	//if (100 >= m_tRect.left || WINCX - 100 <= m_tRect.right ||
+	//	100 >= m_tRect.top || WINCY - 100 <= m_tRect.bottom)
+	//{
+	//	m_bDead = true;
+	//}
 }
 
 void CPlayer::Render(HDC hDC)
@@ -83,19 +90,18 @@ void CPlayer::Key_Input(void)
 		m_tInfo.fY += m_fSpeed;
 
 	if (CKeyMgr::Get_Instance()->Key_Up('W'))
-		m_pBullet->push_back(Create_Bullet(DIR_UP));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_UP));
 
 	if (CKeyMgr::Get_Instance()->Key_Up('A'))
-		m_pBullet->push_back(Create_Bullet(DIR_LEFT));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_LEFT));
 
 	if (CKeyMgr::Get_Instance()->Key_Up('S'))
-		m_pBullet->push_back(Create_Bullet(DIR_DOWN));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_DOWN));
 
-	if (GetAsyncKeyState('D'))
-		m_pBullet->push_back(CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tInfo.fY, DIR_RIGHT));
+	if (CKeyMgr::Get_Instance()->Key_Up('D'))
+		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_RIGHT));
 
 }
-
 CObj* CPlayer::Create_Bullet(DIRECTION eDir)
 {
 	/*CObj*		pBullet = new CBullet;

@@ -1,6 +1,6 @@
 #pragma once
 #include "Logo.h"
-
+#include "Stage.h"
 class CSceneMgr
 {
 private:

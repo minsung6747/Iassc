@@ -29,14 +29,8 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 			m_pScene = new CLogo;
 			break;
 
-		case SC_MENU:
-			
-			break;
-
-		case SC_EDIT:
-			break;
-
 		case SC_STAGE:
+			m_pScene = new CStage;
 			break;
 
 		}
