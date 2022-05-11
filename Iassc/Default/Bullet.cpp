@@ -15,7 +15,7 @@ CBullet::~CBullet()
 
 void CBullet::Initialize(void)
 {
-	m_bDead = false;
+	 m_bDead = false;
 	 bCheckBullet = 0;
 	 bDeadEffectTime=0;
 
@@ -25,7 +25,9 @@ void CBullet::Initialize(void)
 	
 	fBulletDie_fCX=50;
 	fBulletDie_fCY=50;
-	m_fSpeed = 3.f;
+	m_fSpeed = 7.f;
+
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Bullet.bmp", L"Bullet");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/BulletDie.bmp", L"BulletDie");
 
@@ -109,9 +111,10 @@ if (1 <= bCheckBullet)
 	bDeadEffectTime++;
 	if (bDeadEffectTime >= 100)
 	{
+		
 		m_bDead = true;
 	}
-
+	m_fSpeed = 0;
 }
 else {
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Bullet");

@@ -32,6 +32,9 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 		case SC_STAGE:
 			m_pScene = new CStage;
 			break;
+		case SC_STAGE2:
+			m_pScene = new CStage2;
+			break;
 
 		}
 

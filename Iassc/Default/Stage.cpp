@@ -8,7 +8,8 @@
 #include "Bullet.h"
 #include "Block.h"
 #include "Fly.h"
-
+#include "Block.h"
+#include "Door.h"
 CStage::CStage()
 {
 }
@@ -36,7 +37,7 @@ void CStage::Initialize(void)
 		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 
 	}
-	
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pBullet);
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create(200.f,400.f));
 	//dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
@@ -63,4 +64,5 @@ void CStage::Render(HDC hDC)
 void CStage::Release(void)
 {
 	
+
 }

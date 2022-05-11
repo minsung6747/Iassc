@@ -70,6 +70,12 @@
     <Filter Include="01. Obj\02. Monster">
       <UniqueIdentifier>{5894ed20-68f8-41d2-8897-4b59beea4099}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\06. Door">
+      <UniqueIdentifier>{874671f0-a6c1-4fe9-9e4c-0a8fd5771f96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\02.State2">
+      <UniqueIdentifier>{c3338bbe-0a2d-41e2-ab78-cf5b19767328}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -153,6 +159,12 @@
     <ClInclude Include="Fly.h">
       <Filter>01. Obj\02. Monster</Filter>
     </ClInclude>
+    <ClInclude Include="Door.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage2.h">
+      <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -208,6 +220,12 @@
     </ClCompile>
     <ClCompile Include="Fly.cpp">
       <Filter>01. Obj\02. Monster</Filter>
+    </ClCompile>
+    <ClCompile Include="Door.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage2.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
