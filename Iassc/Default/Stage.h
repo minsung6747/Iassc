@@ -14,7 +14,7 @@ public:
 	 void	Render(HDC hDC);
 	 void	Release(void);
 private:
-	list<CObj*>	m_ObjList[OBJ_END];
+	
 
 };
 

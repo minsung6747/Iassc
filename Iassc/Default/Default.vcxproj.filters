@@ -150,6 +150,9 @@
     <ClInclude Include="Block.h">
       <Filter>01. Obj\04. Block</Filter>
     </ClInclude>
+    <ClInclude Include="Fly.h">
+      <Filter>01. Obj\02. Monster</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -202,6 +205,9 @@
     </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>01. Obj\04. Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Fly.cpp">
+      <Filter>01. Obj\02. Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
