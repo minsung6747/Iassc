@@ -67,6 +67,9 @@
     <Filter Include="01. Obj\04. Block">
       <UniqueIdentifier>{15ebcb00-26a2-468c-ac50-b4b9f66286e6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\02. Monster">
+      <UniqueIdentifier>{5894ed20-68f8-41d2-8897-4b59beea4099}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

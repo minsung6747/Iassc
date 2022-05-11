@@ -16,5 +16,13 @@ public:
 	
 public:
 	virtual void OnCollision(CObj* other);
+
+private:
+	int  bCheckBullet;
+	int  bDeadEffectTime;
+
+	float fBulletDie_fCX;
+	float fBulletDie_fCY;
+
 };
 

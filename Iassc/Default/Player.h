@@ -5,7 +5,7 @@
 class CPlayer : public CObj
 {
 public:
-	enum STATE { IDLE,	WALK,SHOT, END };
+	enum STATE { IDLE,	WALK,SHOT_UP,SHOT_DOWN,SHOT_LEFT,SHOT_RIGHT, END };
 public:
 	CPlayer();
 	virtual ~CPlayer();
