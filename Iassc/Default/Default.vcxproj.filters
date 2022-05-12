@@ -85,6 +85,12 @@
     <Filter Include="01. Obj\03. Obstacle\01. Fire">
       <UniqueIdentifier>{4b742ac6-e037-4108-9cca-5a7d77144354}</UniqueIdentifier>
     </Filter>
+    <Filter Include="01. Obj\02. Monster\00. Fly">
+      <UniqueIdentifier>{deb31ba6-db46-4a76-bfe7-16d4f554a9b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\02. Monster\01. Dabi">
+      <UniqueIdentifier>{b055da9a-27b8-404b-af90-4438a36ecd9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -162,9 +168,6 @@
     <ClInclude Include="Stage.h">
       <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
     </ClInclude>
-    <ClInclude Include="Fly.h">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClInclude>
     <ClInclude Include="Door.h">
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
@@ -176,6 +179,12 @@
     </ClInclude>
     <ClInclude Include="Fire.h">
       <Filter>01. Obj\03. Obstacle\01. Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Fly.h">
+      <Filter>01. Obj\02. Monster\00. Fly</Filter>
+    </ClInclude>
+    <ClInclude Include="Hopper.h">
+      <Filter>01. Obj\02. Monster\01. Dabi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -227,9 +236,6 @@
     <ClCompile Include="Scene.cpp">
       <Filter>98. Design\SceneMgr</Filter>
     </ClCompile>
-    <ClCompile Include="Fly.cpp">
-      <Filter>01. Obj\02. Monster</Filter>
-    </ClCompile>
     <ClCompile Include="Door.cpp">
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
@@ -241,6 +247,12 @@
     </ClCompile>
     <ClCompile Include="Fire.cpp">
       <Filter>01. Obj\03. Obstacle\01. Fire</Filter>
+    </ClCompile>
+    <ClCompile Include="Fly.cpp">
+      <Filter>01. Obj\02. Monster\00. Fly</Filter>
+    </ClCompile>
+    <ClCompile Include="Hopper.cpp">
+      <Filter>01. Obj\02. Monster\01. Dabi</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

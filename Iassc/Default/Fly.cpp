@@ -23,7 +23,7 @@ void CFly::Initialize(void)
 	m_tFrame.dwSpeed = 200;
 	m_tFrame.dwTime = GetTickCount();
 	m_pFrameKey = L"Fly";
-	m_fSpeed = 3;
+	m_fSpeed = 2;
 	
 }
 

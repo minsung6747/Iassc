@@ -11,6 +11,7 @@
 #include "Block.h"
 #include "Door.h"
 #include "Fire.h"
+#include "Hopper.h"
 CStage::CStage()
 {
 }
@@ -33,13 +34,22 @@ void CStage::Initialize(void)
 		CObjMgr::Get_Instance()->Add_Object(OBJ_FLY, CAbstractFactory<CFly>::Create(500 + 10 * i, 400));
 	}//OBJMGR
 
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 350));
+
+
+
 	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_FLY))
 	{
 		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 
 	}
-	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
+	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_HOPPER))
+	{
+		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+
+	}
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pBullet);
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create(200.f,400.f));
 	//dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
