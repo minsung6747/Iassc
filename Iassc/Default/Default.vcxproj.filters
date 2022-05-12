@@ -58,14 +58,8 @@
     <Filter Include="98. Design\SceneMgr\00.Scene\00.Logo">
       <UniqueIdentifier>{b89b4896-2a46-47f4-8314-d7ef8cdac37f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\05. MyButton">
-      <UniqueIdentifier>{8a2cfec8-247c-4eb7-8b20-8af33d595b03}</UniqueIdentifier>
-    </Filter>
     <Filter Include="98. Design\SceneMgr\00.Scene\01.Stage">
       <UniqueIdentifier>{e1fe0654-c636-423f-ace8-fb4d798a46d5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="01. Obj\04. Block">
-      <UniqueIdentifier>{15ebcb00-26a2-468c-ac50-b4b9f66286e6}</UniqueIdentifier>
     </Filter>
     <Filter Include="01. Obj\02. Monster">
       <UniqueIdentifier>{5894ed20-68f8-41d2-8897-4b59beea4099}</UniqueIdentifier>
@@ -75,6 +69,21 @@
     </Filter>
     <Filter Include="98. Design\SceneMgr\00.Scene\02.State2">
       <UniqueIdentifier>{c3338bbe-0a2d-41e2-ab78-cf5b19767328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\10. MyButton">
+      <UniqueIdentifier>{8a2cfec8-247c-4eb7-8b20-8af33d595b03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\05.">
+      <UniqueIdentifier>{9e017335-c05f-44e0-8dd5-f95ca8d7404d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Obstacle">
+      <UniqueIdentifier>{15ebcb00-26a2-468c-ac50-b4b9f66286e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Obstacle\00. Block">
+      <UniqueIdentifier>{f6f5434b-0cc5-437f-90fd-fb3cf59d9be7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Obstacle\01. Fire">
+      <UniqueIdentifier>{4b742ac6-e037-4108-9cca-5a7d77144354}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -148,13 +157,10 @@
       <Filter>98. Design\SceneMgr\00.Scene\00.Logo</Filter>
     </ClInclude>
     <ClInclude Include="MyButton.h">
-      <Filter>01. Obj\05. MyButton</Filter>
+      <Filter>01. Obj\10. MyButton</Filter>
     </ClInclude>
     <ClInclude Include="Stage.h">
       <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
-    </ClInclude>
-    <ClInclude Include="Block.h">
-      <Filter>01. Obj\04. Block</Filter>
     </ClInclude>
     <ClInclude Include="Fly.h">
       <Filter>01. Obj\02. Monster</Filter>
@@ -164,6 +170,12 @@
     </ClInclude>
     <ClInclude Include="Stage2.h">
       <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
+    </ClInclude>
+    <ClInclude Include="Block.h">
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Fire.h">
+      <Filter>01. Obj\03. Obstacle\01. Fire</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -207,16 +219,13 @@
       <Filter>98. Design\SceneMgr\00.Scene\00.Logo</Filter>
     </ClCompile>
     <ClCompile Include="MyButton.cpp">
-      <Filter>01. Obj\05. MyButton</Filter>
+      <Filter>01. Obj\10. MyButton</Filter>
     </ClCompile>
     <ClCompile Include="Stage.cpp">
       <Filter>98. Design\SceneMgr\00.Scene\01.Stage</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>98. Design\SceneMgr</Filter>
-    </ClCompile>
-    <ClCompile Include="Block.cpp">
-      <Filter>01. Obj\04. Block</Filter>
     </ClCompile>
     <ClCompile Include="Fly.cpp">
       <Filter>01. Obj\02. Monster</Filter>
@@ -226,6 +235,12 @@
     </ClCompile>
     <ClCompile Include="Stage2.cpp">
       <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
+    </ClCompile>
+    <ClCompile Include="Block.cpp">
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Fire.cpp">
+      <Filter>01. Obj\03. Obstacle\01. Fire</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

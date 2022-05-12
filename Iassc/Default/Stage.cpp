@@ -10,6 +10,7 @@
 #include "Fly.h"
 #include "Block.h"
 #include "Door.h"
+#include "Fire.h"
 CStage::CStage()
 {
 }
@@ -38,6 +39,7 @@ void CStage::Initialize(void)
 
 	}
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pBullet);
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create(200.f,400.f));
 	//dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
@@ -63,6 +65,9 @@ void CStage::Render(HDC hDC)
 
 void CStage::Release(void)
 {
+	/*CObjMgr::Get_List(OBJ_BLOCK);
+	for_each(.begin(), .end(), CDeleteObj());
+	m_vecTile.clear();*/
 	
-
+	
 }

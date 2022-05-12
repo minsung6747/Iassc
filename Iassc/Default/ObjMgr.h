@@ -14,6 +14,8 @@ public:
 	list<CObj*>* Get_List(OBJID eID) {return  &m_ObjList[eID];}
 	CObj* Get_Target(OBJID eID, CObj* pObj);
 	
+	
+	
 
 public:
 	void		Add_Object(OBJID eID, CObj* pObj);
