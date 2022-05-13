@@ -1,9 +1,12 @@
 #include "stdafx.h"
 #include "MyButton.h"
 #include "BmpMgr.h"
+#include "KeyMgr.h"
+#include "SceneMgr.h"
 
 
 CMyButton::CMyButton()
+	: m_iDrawID(0)
 {
 }
 
@@ -15,8 +18,8 @@ CMyButton::~CMyButton()
 
 void CMyButton::Initialize(void)
 {
-	m_tInfo.fCX = 150.f;
-	m_tInfo.fCY = 150.f;
+	m_tInfo.fCX = 170.f;
+	m_tInfo.fCY = 70.f;
 }
 
 int CMyButton::Update(void)
@@ -31,7 +34,27 @@ int CMyButton::Update(void)
 
 void CMyButton::Late_Update(void)
 {
+	POINT	pt{};
+	GetCursorPos(&pt);
+	ScreenToClient(g_hWnd, &pt);
 
+	if (PtInRect(&m_tRect, pt))
+	{
+		if (CKeyMgr::Get_Instance()->Key_Down(VK_LBUTTON))
+		{
+			if (!lstrcmp(L"Start", m_pFrameKey))
+				CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE);
+
+			
+
+			return;
+		}
+
+		m_iDrawID = 1;
+	}
+
+	else
+		m_iDrawID = 0;
 }
 
 void CMyButton::Render(HDC hDC)
@@ -44,7 +67,7 @@ void CMyButton::Render(HDC hDC)
 		int(m_tInfo.fCX),				// 4,5 인자 : 복사받을 가로, 세로 길이
 		int(m_tInfo.fCY),
 		hMemDC,							// 비트맵을 가지고 있는 DC
-		0,								// 비트맵 출력 시작 좌표, X,Y
+		int(m_tInfo.fCX) * m_iDrawID,								// 비트맵 출력 시작 좌표, X,Y
 		0,
 		(int)m_tInfo.fCX,				// 복사할 비트맵의 가로, 세로 길이
 		(int)m_tInfo.fCY,

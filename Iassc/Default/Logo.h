@@ -1,5 +1,6 @@
 #pragma once
 #include "Scene.h"
+#include "ObjMgr.h"
 class CLogo :
 	public CScene
 {

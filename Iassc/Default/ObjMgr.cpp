@@ -77,12 +77,21 @@ void CObjMgr::Late_Update(void)
 	for (int i = 0; i < OBJ_END; ++i)
 	{
 		for (auto& iter : m_ObjList[i])
+		{
+			
 			iter->Late_Update();
+			if (m_ObjList[i].empty())
+			{
+				break;
+			}
+		}
 	}
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_BLOCK], m_ObjList[OBJ_PLAYER]);
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_PLAYER], m_ObjList[OBJ_FLY]);
-	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_PLAYER], m_ObjList[OBJ_HOPPER]);
 
+
+	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_PLAYER], m_ObjList[OBJ_HOPPER]);
+	
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_DOOR], m_ObjList[OBJ_PLAYER],true);
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_FIRE], m_ObjList[OBJ_PLAYER]);
 
@@ -121,4 +130,5 @@ void CObjMgr::Delete_ID(OBJID eID)
 		Safe_Delete(iter);
 
 	m_ObjList[eID].clear();
+
 }

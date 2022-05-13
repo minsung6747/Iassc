@@ -67,9 +67,6 @@
     <Filter Include="01. Obj\06. Door">
       <UniqueIdentifier>{874671f0-a6c1-4fe9-9e4c-0a8fd5771f96}</UniqueIdentifier>
     </Filter>
-    <Filter Include="98. Design\SceneMgr\00.Scene\02.State2">
-      <UniqueIdentifier>{c3338bbe-0a2d-41e2-ab78-cf5b19767328}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\10. MyButton">
       <UniqueIdentifier>{8a2cfec8-247c-4eb7-8b20-8af33d595b03}</UniqueIdentifier>
     </Filter>
@@ -90,6 +87,12 @@
     </Filter>
     <Filter Include="01. Obj\02. Monster\01. Dabi">
       <UniqueIdentifier>{b055da9a-27b8-404b-af90-4438a36ecd9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\02.Stage2">
+      <UniqueIdentifier>{c3338bbe-0a2d-41e2-ab78-cf5b19767328}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\02. Monster\02. Envy">
+      <UniqueIdentifier>{72459f78-a461-4e52-b9dd-3d904a4efb6d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -172,7 +175,7 @@
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
     <ClInclude Include="Stage2.h">
-      <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
+      <Filter>98. Design\SceneMgr\00.Scene\02.Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
       <Filter>01. Obj\03. Obstacle\00. Block</Filter>
@@ -185,6 +188,9 @@
     </ClInclude>
     <ClInclude Include="Hopper.h">
       <Filter>01. Obj\02. Monster\01. Dabi</Filter>
+    </ClInclude>
+    <ClInclude Include="Envy.h">
+      <Filter>01. Obj\02. Monster\02. Envy</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +205,6 @@
     </ClCompile>
     <ClCompile Include="Obj.cpp">
       <Filter>01. Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>01. Obj\00. Player</Filter>
     </ClCompile>
     <ClCompile Include="Bullet.cpp">
       <Filter>01. Obj\01. Bullet</Filter>
@@ -240,7 +243,7 @@
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
     <ClCompile Include="Stage2.cpp">
-      <Filter>98. Design\SceneMgr\00.Scene\02.State2</Filter>
+      <Filter>98. Design\SceneMgr\00.Scene\02.Stage2</Filter>
     </ClCompile>
     <ClCompile Include="Block.cpp">
       <Filter>01. Obj\03. Obstacle\00. Block</Filter>
@@ -253,6 +256,12 @@
     </ClCompile>
     <ClCompile Include="Hopper.cpp">
       <Filter>01. Obj\02. Monster\01. Dabi</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>01. Obj\00. Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Envy.cpp">
+      <Filter>01. Obj\02. Monster\02. Envy</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

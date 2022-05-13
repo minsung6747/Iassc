@@ -24,6 +24,8 @@ CStage::~CStage()
 
 void CStage::Initialize(void)
 {
+	
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage.bmp", L"Stage");
 
 	//CObj* pBullet = CAbstractFactory<CBullet>::Create();
@@ -80,5 +82,6 @@ void CStage::Release(void)
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_FLY);
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);
+
 	
 }

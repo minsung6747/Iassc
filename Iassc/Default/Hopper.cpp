@@ -57,12 +57,13 @@ int CHopper::Update(void)
 
 		m_tInfo.fX += m_fSpeed * cosf((m_fAngle)*PI / 180.f);
 		m_tInfo.fY -= m_fSpeed * sinf((m_fAngle)*PI / 180.f);
+		
 
 	}
 	// 플레이어가 삭제될 경우 댕글링이 발생할 가능성이 있음 m_ptarget이 \
 	//플레이어가 삭제되고 cfly 의 업데이트가 호출됐는데 m_ptarget이 null이 아님.
 
-
+	
 
 
 	Update_Rect();

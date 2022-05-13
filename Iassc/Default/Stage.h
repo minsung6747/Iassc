@@ -5,14 +5,14 @@ class CStage : public CScene
 {
 public:
 	CStage();
-	~CStage();
+	virtual ~CStage();
 public:
 
-	 void	Initialize(void);
-     void	Update(void);
-	 void	Late_Update(void);
-	 void	Render(HDC hDC);
-	 void	Release(void);
+	void	Initialize(void);
+    void	Update(void);
+	void	Late_Update(void);
+	void	Render(HDC hDC);
+	void	Release(void);
 private:
 	
 
