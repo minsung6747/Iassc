@@ -12,6 +12,7 @@
 #include "Door.h"
 #include "Fire.h"
 #include "Hopper.h"
+#include "Envy.h"
 
 CStage::CStage()
 {
@@ -40,6 +41,10 @@ void CStage::Initialize(void)
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 350));
+
+
+	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(500, 350));
+
 
 
 

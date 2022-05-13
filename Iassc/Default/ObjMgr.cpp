@@ -99,6 +99,8 @@ void CObjMgr::Late_Update(void)
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BLOCK], m_ObjList[OBJ_BULLET]);
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BULLET], m_ObjList[OBJ_FLY]);
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BULLET], m_ObjList[OBJ_HOPPER]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BULLET], m_ObjList[OBJ_ENVY]);
+
 
 
 	//CCollisionMgr::Collision_Sphere(m_ObjList[OBJ_MONSTER], m_ObjList[OBJ_BULLET]);
