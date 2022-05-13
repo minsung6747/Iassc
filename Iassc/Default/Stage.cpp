@@ -12,6 +12,7 @@
 #include "Door.h"
 #include "Fire.h"
 #include "Hopper.h"
+
 CStage::CStage()
 {
 }
@@ -75,9 +76,9 @@ void CStage::Render(HDC hDC)
 
 void CStage::Release(void)
 {
-	/*CObjMgr::Get_List(OBJ_BLOCK);
-	for_each(.begin(), .end(), CDeleteObj());
-	m_vecTile.clear();*/
-	
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_BLOCK);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_FLY);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);
 	
 }
