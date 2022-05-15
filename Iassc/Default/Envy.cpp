@@ -40,17 +40,8 @@ int CEnvy::Update(void)
 	
 	m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
 	m_tInfo.fY += m_fSpeed * sinf((m_fAngle * PI) / 180.f);
-	if (m_fSpeed <= 0)
-	{
-		bCheckDir = true;
 
-
-	}
-	else
-	{
-		bCheckDir = false;
-	}
-
+	
 	Update_Rect();
 
 
@@ -65,16 +56,16 @@ void CEnvy::Late_Update(void)
 	{
 		m_fSpeed *= -1;
 		
+		if (m_fSpeed <= 0)
+		{
+			bCheckDir = true;
 
-		//m_fAngle = rand() % 360;
-		//if (90 <= m_fAngle <= 270)
-		//{
-		//	bCheckDir = true;
-		//	m_tFrame.iFrameStart = 1;
-		//	m_tFrame.iFrameEnd = 1;  //가로
+		}
+		else
+		{
+			bCheckDir = false;
 
-		//}
-		
+		}
 	}
 	
 	
@@ -86,8 +77,6 @@ void CEnvy::Render(HDC hDC)
 {
 	if (bCheckDir == true)
 	{
-		m_tFrame.iFrameStart = 0;
-		m_tFrame.iFrameEnd = 0;
 		HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 		//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 		GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
@@ -105,7 +94,6 @@ void CEnvy::Render(HDC hDC)
 	else
 	{
 		m_tFrame.iFrameStart = 1;
-		m_tFrame.iFrameEnd = 0;
 		HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(m_pFrameKey);
 		//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 		GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
@@ -120,6 +108,7 @@ void CEnvy::Render(HDC hDC)
 			(int)m_tInfo.fCY,
 			RGB(255, 255, 255));			// 제거하고자 하는 색상
 	}
+
 	
 }
 
@@ -130,5 +119,4 @@ void CEnvy::Release(void)
 void CEnvy::OnCollision(CObj* other)
 {
 	
-	m_tFrame.iFrameStart++;
 }

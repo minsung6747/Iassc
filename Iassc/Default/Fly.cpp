@@ -13,8 +13,8 @@ CFly::~CFly()
 void CFly::Initialize(void)
 {
 	m_pTarget = nullptr;
-    m_tInfo.fCX = 20;
-    m_tInfo.fCY = 15;
+    m_tInfo.fCX = 40;
+    m_tInfo.fCY = 30;
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Fly.bmp", L"Fly");
 	
 	m_tFrame.iFrameStart = 0;
@@ -23,7 +23,7 @@ void CFly::Initialize(void)
 	m_tFrame.dwSpeed = 200;
 	m_tFrame.dwTime = GetTickCount();
 	m_pFrameKey = L"Fly";
-	m_fSpeed = 2;
+	m_fSpeed = 1;
 	
 }
 

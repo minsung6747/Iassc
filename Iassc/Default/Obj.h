@@ -63,7 +63,8 @@ protected:
 	CObj* m_pTarget;
 	TCHAR* m_pFrameKey;
 
-	
+	float		m_fDelay;
+	float	    m_fOldTime;
 
 };
 

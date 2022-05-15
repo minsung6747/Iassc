@@ -155,6 +155,8 @@
     <ClInclude Include="Envy.h" />
     <ClInclude Include="Hopper.h" />
     <ClInclude Include="Fire.h" />
+    <ClInclude Include="Mack.h" />
+    <ClInclude Include="MonsterBullet.h" />
     <ClInclude Include="Stage2.h" />
     <ClInclude Include="Default.h" />
     <ClInclude Include="Define.h" />
@@ -183,6 +185,8 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BmpMgr.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="MonsterBullet.cpp" />
+    <ClCompile Include="Mack.cpp" />
     <ClCompile Include="Envy.cpp" />
     <ClCompile Include="Hopper.cpp" />
     <ClCompile Include="Fire.cpp" />

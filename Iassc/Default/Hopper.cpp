@@ -64,8 +64,6 @@ int CHopper::Update(void)
 	//플레이어가 삭제되고 cfly 의 업데이트가 호출됐는데 m_ptarget이 null이 아님.
 
 	
-
-
 	Update_Rect();
 
 
@@ -75,6 +73,7 @@ int CHopper::Update(void)
 void CHopper::Late_Update(void)
 {
 	Move_Frame();
+	
 }
 
 void CHopper::Render(HDC hDC)

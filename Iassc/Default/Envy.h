@@ -4,7 +4,7 @@ class CEnvy : public CObj
 {
 public:
 	CEnvy();
-	~CEnvy();
+	 ~CEnvy();
 
 public:
 	virtual		void	Initialize(void) override;

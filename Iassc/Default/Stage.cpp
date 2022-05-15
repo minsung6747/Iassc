@@ -13,6 +13,7 @@
 #include "Fire.h"
 #include "Hopper.h"
 #include "Envy.h"
+#include "Mack.h"
 
 CStage::CStage()
 {
@@ -33,17 +34,18 @@ void CStage::Initialize(void)
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));
-	for (int i = 0; i < 5; ++i)
-	{
-		CObjMgr::Get_Instance()->Add_Object(OBJ_FLY, CAbstractFactory<CFly>::Create(500 + 10 * i, 400));
-	}//OBJMGR
+	//for (int i = 0; i < 10; ++i)
+	//{
+	//	CObjMgr::Get_Instance()->Add_Object(OBJ_FLY, CAbstractFactory<CFly>::Create(500 + 10 * i, 400));
+	//}//OBJMGR
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 350));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 350));
 
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(500, 350));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(500, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(500, 300));
 
 
 
@@ -54,6 +56,11 @@ void CStage::Initialize(void)
 
 	}
 	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_HOPPER))
+	{
+		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+
+	}
+	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_MACK))
 	{
 		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 

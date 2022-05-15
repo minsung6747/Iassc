@@ -25,6 +25,7 @@ void CBullet::Initialize(void)
 	
 	fBulletDie_fCX=50;
 	fBulletDie_fCY=50;
+
 	m_fSpeed = 7.f;
 
 

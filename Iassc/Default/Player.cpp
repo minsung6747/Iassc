@@ -105,6 +105,8 @@ void CPlayer::Release(void)
 	
 }
 
+
+
 void CPlayer::Key_Input(void)
 {
 	// GetKeyState
@@ -140,6 +142,7 @@ void CPlayer::Key_Input(void)
 		if (m_tInfo.fY <= 490)
 		{
 			m_tInfo.fY += m_fSpeed;
+
 			m_pFrameKey = L"isaac";
 			m_eCurState = WALK;
 		}
