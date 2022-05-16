@@ -100,11 +100,14 @@
     <Filter Include="98. Design\GameMgr">
       <UniqueIdentifier>{6673cff2-7e18-4bc5-8ea8-24726285ebb0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\03. Obstacle\02. Ddong">
-      <UniqueIdentifier>{549a76f6-6794-4771-a237-9a9172948948}</UniqueIdentifier>
-    </Filter>
     <Filter Include="98. Design\SceneMgr\00.Scene\03.Stage3">
       <UniqueIdentifier>{1681df65-0f08-4707-a4e9-659d165df6df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\04.Stage4">
+      <UniqueIdentifier>{f562bc0f-135b-4b98-9064-da56b7f1232f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Obstacle\02. Ddong">
+      <UniqueIdentifier>{549a76f6-6794-4771-a237-9a9172948948}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -225,6 +228,18 @@
     <ClInclude Include="Door2_3.h">
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
+    <ClInclude Include="Stage4.h">
+      <Filter>98. Design\SceneMgr\00.Scene\04.Stage4</Filter>
+    </ClInclude>
+    <ClInclude Include="Door1_4.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Block3.h">
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
+    </ClInclude>
+    <ClInclude Include="Door4_5.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -315,6 +330,18 @@
       <Filter>98. Design\SceneMgr\00.Scene\03.Stage3</Filter>
     </ClCompile>
     <ClCompile Include="Door2_3.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage4.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\04.Stage4</Filter>
+    </ClCompile>
+    <ClCompile Include="Door1_4.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Block3.cpp">
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
+    </ClCompile>
+    <ClCompile Include="Door4_5.cpp">
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
   </ItemGroup>

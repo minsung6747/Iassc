@@ -99,10 +99,13 @@ void CObjMgr::Late_Update(void)
 	//고정되어 있는 물체  // 움직이는 물체		
 	//	void CCollisionMgr::Collision_RectEx(list<CObj*> _Dest, list<CObj*> _Sour)
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_BLOCK], m_ObjList[OBJ_PLAYER]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BLOCK], m_ObjList[OBJ_MBULLET]);
+
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_FLY], m_ObjList[OBJ_PLAYER]);
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_HOPPER], m_ObjList[OBJ_PLAYER]);
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_ENVY], m_ObjList[OBJ_PLAYER]);
-	
+\
+
 
 	
 	

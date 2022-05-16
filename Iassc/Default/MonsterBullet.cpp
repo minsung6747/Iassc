@@ -54,7 +54,7 @@ int CMonsterBullet::Update(void)
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	Update_Rect();
 
-	if (m_dwBulletDie + 3000 < GetTickCount())
+	if (m_dwBulletDie + 5000 < GetTickCount())
 	{
 		Set_Dead();
 		m_dwBulletDie = GetTickCount();
@@ -89,4 +89,5 @@ void CMonsterBullet::Release(void)
 
 void CMonsterBullet::OnCollision(CObj* other)
 {
+	Set_Dead();
 }

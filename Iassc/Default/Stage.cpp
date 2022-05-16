@@ -14,6 +14,7 @@
 #include "Hopper.h"
 #include "Envy.h"
 #include "Mack.h"
+#include "Door1_4.h"
 
 CStage::CStage()
 {
@@ -37,6 +38,8 @@ void CStage::Initialize(void)
 
 	}
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(762, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor1_4>::Create(100, 350));
+
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
 	
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));
