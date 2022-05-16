@@ -16,10 +16,12 @@ public:
 public:
 	void		Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
 	CObj*		Create_Bullet();
-	void		AutoShot();
+
 public:
 	void OnCollision(CObj* other);
 private:
 	int iHowBullet;
+	
+	
 };
 

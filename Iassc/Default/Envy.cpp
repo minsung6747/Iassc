@@ -55,7 +55,7 @@ void CEnvy::Late_Update(void)
 
 	{
 		m_fSpeed *= -1;
-		
+	
 		if (m_fSpeed <= 0)
 		{
 			bCheckDir = true;
@@ -118,5 +118,5 @@ void CEnvy::Release(void)
 
 void CEnvy::OnCollision(CObj* other)
 {
-	
+	Set_Dead();
 }

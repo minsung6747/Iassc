@@ -24,5 +24,7 @@ private:
 	float fBulletDie_fCX;
 	float fBulletDie_fCY;
 
+	DWORD m_dwBulletDie;
+
 };
 

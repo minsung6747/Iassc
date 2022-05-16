@@ -31,6 +31,8 @@ void CFire::Initialize(void)
 
 int CFire::Update(void)
 {
+
+	
 	Update_Rect();
 	return 0;
 }

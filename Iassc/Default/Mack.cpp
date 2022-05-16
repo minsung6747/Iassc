@@ -5,6 +5,8 @@
 #include "MonsterBullet.h"
 #include "ObjMgr.h"
 #include "Obj.h"
+
+
 CMack::CMack()
 {
 }
@@ -25,7 +27,7 @@ void CMack::Initialize(void)
 	m_tFrame.iFrameEnd = 5;  //가로
 	m_tFrame.iMotion = 0;    //세로
 	m_tFrame.dwSpeed = 400;
-	m_tFrame.dwTime = GetTickCount();
+	m_tFrame.dwTime = GetTickCount64();
 
 	m_fDelay = 1000.f;
 	m_fOldTime = GetTickCount64();
@@ -35,17 +37,20 @@ void CMack::Initialize(void)
 
 int CMack::Update(void)
 {
-	if (m_fOldTime + 1000 < GetTickCount())  // 만약에 이전시간값 더하기 쿨타임2초 보다 디버깅한 후 시간보다 작다면 
+	if (m_fOldTime + 1000 < GetTickCount64())  // 만약에 이전시간값 더하기 쿨타임2초 보다 디버깅한 후 시간보다 작다면 
 	{
 
 
 			CObjMgr::Get_Instance()->Add_Object(OBJ_MBULLET, Create_Bullet());
 
+			
 			// 리스트에 몬스터를 하나 만든다. 
 		
-		m_fOldTime = GetTickCount();  //그리고 이전시간값을 다시 디버깅한 후 시간으로 초기화시킨다. 
+		m_fOldTime = GetTickCount64();  //그리고 이전시간값을 다시 디버깅한 후 시간으로 초기화시킨다. 
 	}
+	
 
+	
 
 	if(m_bDead)
 		return OBJ_DEAD;
@@ -90,19 +95,9 @@ CObj* CMack::Create_Bullet()
 	return pBullet;
 }
 
-void CMack::AutoShot()
-{
-	
-		CObjMgr::Get_Instance()->Add_Object(OBJ_MBULLET, Create_Bullet());
-	
 
-
-}
 
 void CMack::OnCollision(CObj* other)
 {
+	Set_Dead();
 }
-//if (m_tInfo.fX == m_pTarget->Get_Info().fX || m_tInfo.fY == m_pTarget->Get_Info().fY)
-//{
-//	CObjMgr::Get_Instance()->Add_Object(OBJ_MBULLET, Create_Bullet());
-//}*/

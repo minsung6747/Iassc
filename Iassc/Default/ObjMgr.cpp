@@ -14,6 +14,15 @@ CObjMgr::~CObjMgr()
 	Release();
 }
 
+bool CObjMgr::IsPlayer()
+{
+	if (!m_ObjList[OBJ_PLAYER].empty())
+	{
+		return true;
+	}
+	return false;
+
+}
 CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
 {
 	if (m_ObjList[eID].empty())
@@ -98,9 +107,9 @@ void CObjMgr::Late_Update(void)
 	
 	
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_DOOR], m_ObjList[OBJ_PLAYER],true);
-	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_FIRE], m_ObjList[OBJ_PLAYER]);
+	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_OBSTACLE], m_ObjList[OBJ_PLAYER]);
 
-	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_FIRE], m_ObjList[OBJ_BULLET]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_OBSTACLE], m_ObjList[OBJ_BULLET]);
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BLOCK], m_ObjList[OBJ_BULLET]);
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BULLET], m_ObjList[OBJ_FLY]);
 	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BULLET], m_ObjList[OBJ_HOPPER]);

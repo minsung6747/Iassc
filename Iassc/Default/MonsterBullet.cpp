@@ -20,17 +20,18 @@ void CMonsterBullet::Initialize(void)
 
 	m_fSpeed = 2.f;
 
-	
+	m_dwBulletDie = GetTickCount();
 }
 
 int CMonsterBullet::Update(void)
 {
 
-
+	
 
 	if (m_bDead)
 		return OBJ_DEAD;
-
+	
+	
 
 
 	m_pTarget = CObjMgr::Get_Instance()->Get_Target(OBJ_PLAYER, this);
@@ -52,6 +53,12 @@ int CMonsterBullet::Update(void)
 	m_tInfo.fX += m_fSpeed * cosf(m_fAngle * PI / 180.f);
 	m_tInfo.fY -= m_fSpeed * sinf(m_fAngle * PI / 180.f);
 	Update_Rect();
+
+	if (m_dwBulletDie + 3000 < GetTickCount())
+	{
+		Set_Dead();
+		m_dwBulletDie = GetTickCount();
+	}
 	return 0;
 }
 

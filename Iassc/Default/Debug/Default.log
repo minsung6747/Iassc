@@ -1,4 +1,2 @@
-﻿  Mack.cpp
-C:\Users\mi_in\OneDrive\문서\GitHub\Iassc\Iassc\Default\Mack.cpp(31,29): warning C4244: '=': 'ULONGLONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\mi_in\OneDrive\문서\GitHub\Iassc\Iassc\Default\Mack.cpp(46,28): warning C4244: '=': 'DWORD'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Envy.cpp
   Default.vcxproj -> C:\Users\mi_in\OneDrive\문서\GitHub\Iassc\Iassc\Debug\Default.exe

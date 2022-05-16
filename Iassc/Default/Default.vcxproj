@@ -149,10 +149,14 @@
   <ItemGroup>
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="Block.h" />
+    <ClInclude Include="Block2.h" />
     <ClInclude Include="BmpMgr.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="CollisionMgr.h" />
+    <ClInclude Include="Ddong.h" />
+    <ClInclude Include="Door2_3.h" />
     <ClInclude Include="Envy.h" />
+    <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Hopper.h" />
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Mack.h" />
@@ -177,6 +181,7 @@
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneMgr.h" />
     <ClInclude Include="Stage.h" />
+    <ClInclude Include="Stage3.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -185,6 +190,11 @@
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="BmpMgr.cpp" />
     <ClCompile Include="Block.cpp" />
+    <ClCompile Include="Block2.cpp" />
+    <ClCompile Include="Door2_3.cpp" />
+    <ClCompile Include="Stage3.cpp" />
+    <ClCompile Include="Ddong.cpp" />
+    <ClCompile Include="GameMgr.cpp" />
     <ClCompile Include="MonsterBullet.cpp" />
     <ClCompile Include="Mack.cpp" />
     <ClCompile Include="Envy.cpp" />

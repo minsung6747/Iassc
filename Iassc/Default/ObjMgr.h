@@ -25,7 +25,8 @@ public:
 	void		Release(void);
 
 	void		Delete_ID(OBJID eID);
-
+public:
+	bool		IsPlayer();
 private:
 	list<CObj*>	m_ObjList[OBJ_END];
 

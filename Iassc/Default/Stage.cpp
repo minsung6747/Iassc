@@ -31,40 +31,45 @@ void CStage::Initialize(void)
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage.bmp", L"Stage");
 
 	//CObj* pBullet = CAbstractFactory<CBullet>::Create();
+	if (!CObjMgr::Get_Instance()->IsPlayer())
+	{
+		CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));
-	//for (int i = 0; i < 10; ++i)
+	}
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(762, 350));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
+	
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));
+	//for (int i = 0; i < 2; ++i)
 	//{
 	//	CObjMgr::Get_Instance()->Add_Object(OBJ_FLY, CAbstractFactory<CFly>::Create(500 + 10 * i, 400));
 	//}//OBJMGR
 
-	//CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(760, 350));
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_FIRE, CAbstractFactory<CFire>::Create(600, 350));
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 350));
 
 
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(500, 350));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(500, 300));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(500, 300));
 
 
 
 
-	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_FLY))
-	{
-		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+	//for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_FLY))
+	//{
+	//	iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 
-	}
-	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_HOPPER))
-	{
-		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+	//}
+	//for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_HOPPER))
+	//{
+	//	iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 
-	}
-	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_MACK))
-	{
-		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+	//}
+	//for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_MACK))
+	//{
+	//	iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
 
-	}
+	//}
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, pBullet);
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create(200.f,400.f));
 	//dynamic_cast<CPlayer*>(pPlayer)->Set_BulletList(&m_ObjList[OBJ_BULLET]);
@@ -90,10 +95,11 @@ void CStage::Render(HDC hDC)
 
 void CStage::Release(void)
 {
-	CObjMgr::Get_Instance()->Delete_ID(OBJ_BLOCK);
-	CObjMgr::Get_Instance()->Delete_ID(OBJ_FLY);
-	CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
-	CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);
+	/*CObjMgr::Get_Instance()->Delete_ID(OBJ_BLOCK);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_FLY);*/
+	//CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
+	/*CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);*/
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_DOOR);
 
 	
 }
