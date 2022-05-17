@@ -109,6 +109,15 @@
     <Filter Include="01. Obj\03. Obstacle\02. Ddong">
       <UniqueIdentifier>{549a76f6-6794-4771-a237-9a9172948948}</UniqueIdentifier>
     </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\05.Stage5">
+      <UniqueIdentifier>{c4f9a854-33fe-4ac3-b73a-8a98008d95d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\06.Stage_Item">
+      <UniqueIdentifier>{8e34bb54-4951-4036-8e3f-7b3634b27ad3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="98. Design\SceneMgr\00.Scene\07.Stage_Boss">
+      <UniqueIdentifier>{63f131dd-dc47-40c7-8288-77e61952baef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -240,6 +249,21 @@
     <ClInclude Include="Door4_5.h">
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
+    <ClInclude Include="Stage5.h">
+      <Filter>98. Design\SceneMgr\00.Scene\05.Stage5</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage_Item.h">
+      <Filter>98. Design\SceneMgr\00.Scene\06.Stage_Item</Filter>
+    </ClInclude>
+    <ClInclude Include="DoorItem.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage_Boss.h">
+      <Filter>98. Design\SceneMgr\00.Scene\07.Stage_Boss</Filter>
+    </ClInclude>
+    <ClInclude Include="Door3_Boss.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -342,6 +366,21 @@
       <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClCompile>
     <ClCompile Include="Door4_5.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage5.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\05.Stage5</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_Item.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\06.Stage_Item</Filter>
+    </ClCompile>
+    <ClCompile Include="DooItem.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage_Boss.cpp">
+      <Filter>98. Design\SceneMgr\00.Scene\07.Stage_Boss</Filter>
+    </ClCompile>
+    <ClCompile Include="Door3_Boss.cpp">
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
   </ItemGroup>

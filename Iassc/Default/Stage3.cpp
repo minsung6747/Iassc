@@ -12,7 +12,7 @@
 #include "Ddong.h"
 #include "Door2_3.h"
 #include "Envy.h"
-
+#include "Door3_Boss.h"
 CStage3::CStage3()
 {
 }
@@ -25,6 +25,7 @@ CStage3::~CStage3()
 void CStage3::Initialize(void)
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage3.bmp", L"Stage3");
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor3_Boss>::Create(760, 350));
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(300, 300));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(350, 350));
@@ -53,4 +54,7 @@ void CStage3::Render(HDC hDC)
 
 void CStage3::Release(void)
 {
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_ENVY);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_DOOR);
+
 }

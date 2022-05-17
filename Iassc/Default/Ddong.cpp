@@ -22,7 +22,7 @@ void CDdong::Initialize(void)
 	m_pFrameKey = L"Ddong";
 
 	m_tFrame.iFrameStart = 0;
-	m_tFrame.iFrameEnd = 1;  //가로
+	m_tFrame.iFrameEnd = 0;  //가로
 	m_tFrame.iMotion = 0;    //세로
 	m_tFrame.dwSpeed = 200;
 	m_tFrame.dwTime = GetTickCount();

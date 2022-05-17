@@ -4,6 +4,9 @@
 #include "Stage2.h"
 #include "Stage3.h"
 #include "Stage4.h"
+#include "Stage5.h"
+#include "Stage_Item.h"
+#include "Stage_Boss.h"
 class CSceneMgr
 {
 private:

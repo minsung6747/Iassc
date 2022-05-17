@@ -41,6 +41,15 @@ void CSceneMgr::Scene_Change(SCENEID eID)
 		case SC_STAGE4:
 			m_pScene = new CStage4;
 			break;
+		case SC_STAGE5:
+			m_pScene = new CStage5;
+			break;
+		case SC_STAGE_ITEM:
+			m_pScene = new CStage_Item;
+			break;
+		case SC_STAGE_BOSS:
+			m_pScene = new CStage_Boss;
+			break;
 
 		}
 

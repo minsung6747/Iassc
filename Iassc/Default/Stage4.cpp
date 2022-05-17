@@ -15,6 +15,7 @@
 #include "Envy.h"
 #include "Mack.h"
 #include "Block3.h"
+#include "Door4_5.h"
 CStage4::CStage4()
 {
 }
@@ -27,6 +28,7 @@ CStage4::~CStage4()
 void CStage4::Initialize(void)
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage4.bmp", L"Stage4");
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor4_5>::Create(400, 145));
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 200));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 500));
@@ -34,15 +36,15 @@ void CStage4::Initialize(void)
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(700, 200));
 
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 400));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 400));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 450));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 290));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 240));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 240));
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 400));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 400));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 450));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 290));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 240));
+	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(500, 240));
 	
 
 }
@@ -67,4 +69,9 @@ void CStage4::Render(HDC hDC)
 
 void CStage4::Release(void)
 {
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_BLOCK);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_DOOR);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_MACK);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_MBULLET);
+	//CObjMgr::Get_Instance()->Delete_ID(OBJ_OBSTACLE);
 }

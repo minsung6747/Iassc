@@ -157,7 +157,9 @@
     <ClInclude Include="Ddong.h" />
     <ClInclude Include="Door1_4.h" />
     <ClInclude Include="Door2_3.h" />
+    <ClInclude Include="Door3_Boss.h" />
     <ClInclude Include="Door4_5.h" />
+    <ClInclude Include="DoorItem.h" />
     <ClInclude Include="Envy.h" />
     <ClInclude Include="GameMgr.h" />
     <ClInclude Include="Hopper.h" />
@@ -186,6 +188,9 @@
     <ClInclude Include="Stage.h" />
     <ClInclude Include="Stage3.h" />
     <ClInclude Include="Stage4.h" />
+    <ClInclude Include="Stage5.h" />
+    <ClInclude Include="Stage_Boss.h" />
+    <ClInclude Include="Stage_Item.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
@@ -196,6 +201,10 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Block2.cpp" />
     <ClCompile Include="Block3.cpp" />
+    <ClCompile Include="Door3_Boss.cpp" />
+    <ClCompile Include="DooItem.cpp" />
+    <ClCompile Include="Stage_Boss.cpp" />
+    <ClCompile Include="Stage_Item.cpp" />
     <ClCompile Include="Door4_5.cpp" />
     <ClCompile Include="Door1_4.cpp" />
     <ClCompile Include="Stage4.cpp" />
@@ -224,6 +233,7 @@
     <ClCompile Include="Obj.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneMgr.cpp" />
+    <ClCompile Include="Stage5.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
