@@ -1,2 +1,25 @@
-﻿  Door3_Boss.cpp
+﻿  DooItem.cpp
+  Door.cpp
+  Door1_4.cpp
+  Door2_3.cpp
+  Door3_Boss.cpp
+  Door4_5.cpp
+  Logo.cpp
+  MainGame.cpp
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\MainGame.cpp(1,1): warning C4828: 파일에 0x966 오프셋에서 시작하는 문자가 포함되어 있습니다. 이 문자는 현재 원본 문자 집합에서 잘못된 문자입니다(코드 페이지 949).
+  MonstroBullet.cpp
+  MyButton.cpp
+  SceneMgr.cpp
+  SoundMgr.cpp
+  Stage.cpp
+  Stage2.cpp
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Stage2.cpp(45,82): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Stage2.cpp(50,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Stage2.cpp(55,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Stage2.cpp(60,83): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Stage3.cpp
+  Stage4.cpp
+  Stage5.cpp
+  Stage_Item.cpp
+  코드를 생성하고 있습니다...
   Default.vcxproj -> C:\Users\MinStar\Desktop\Iassc\Iassc\Debug\Default.exe

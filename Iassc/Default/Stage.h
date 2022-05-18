@@ -15,6 +15,6 @@ public:
 	void	Release(void);
 private:
 	
-
+	
 };
 

@@ -166,6 +166,9 @@
     <ClInclude Include="Fire.h" />
     <ClInclude Include="Mack.h" />
     <ClInclude Include="MonsterBullet.h" />
+    <ClInclude Include="Monstro.h" />
+    <ClInclude Include="MonstroBullet.h" />
+    <ClInclude Include="SoundMgr.h" />
     <ClInclude Include="Stage2.h" />
     <ClInclude Include="Default.h" />
     <ClInclude Include="Define.h" />
@@ -194,6 +197,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Struct.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="UIMgr.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
@@ -201,6 +205,9 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Block2.cpp" />
     <ClCompile Include="Block3.cpp" />
+    <ClCompile Include="SoundMgr.cpp" />
+    <ClCompile Include="MonstroBullet.cpp" />
+    <ClCompile Include="Monstro.cpp" />
     <ClCompile Include="Door3_Boss.cpp" />
     <ClCompile Include="DooItem.cpp" />
     <ClCompile Include="Stage_Boss.cpp" />
@@ -240,6 +247,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UIMgr.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Default.rc" />

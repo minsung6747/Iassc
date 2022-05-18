@@ -56,7 +56,7 @@ protected:
 
 	float		m_fSpeed;
 	float		m_fAngle;
-
+	float		m_fTheta;
 	DIRECTION	m_eDir;
 	bool		m_bDead;
 

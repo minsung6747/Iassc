@@ -55,6 +55,7 @@ void CDoor3_Boss::Release(void)
 {
 }
 
+
 void CDoor3_Boss::OnCollision(DIRECTION eDir, CObj* other)
 {
 	if (eDir == DIR_LEFT)
