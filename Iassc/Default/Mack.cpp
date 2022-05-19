@@ -20,7 +20,8 @@ void CMack::Initialize(void)
 {
 	m_tInfo.fCX = 75;
 	m_tInfo.fCY = 85;
-
+	
+	m_tStatInfo = { 3,0,1 };
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Mack.bmp", L"Mack");
 	m_pFrameKey = L"Mack";
 	m_tFrame.iFrameStart = 0;
@@ -99,5 +100,13 @@ CObj* CMack::Create_Bullet()
 
 void CMack::OnCollision(CObj* other)
 {
-	Set_Dead();
+	statInfo& GetBullet = other->Get_StatInfo();
+
+	m_tStatInfo.iHp -= GetBullet.iAt;
+
+	if (m_tStatInfo.iHp <= 0)
+	{
+		Set_Dead();
+	}
+
 }

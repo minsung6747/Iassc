@@ -6,7 +6,9 @@
 #include "KeyMgr.h"
 #include "BmpMgr.h"
 #include "SceneMgr.h"
+#include "SoundMgr.h"
 
+float g_fSound = 1.f;
 CMainGame::CMainGame()
 	: m_dwTime(GetTickCount())
 {
@@ -24,7 +26,7 @@ void CMainGame::Initialize(void)
 {
 	m_hDC = GetDC(g_hWnd);
 	CSceneMgr::Get_Instance()->Scene_Change(SC_LOGO);
-
+	CSoundMgr::Get_Instance()->Initialize();
 	//m_ObjList[OBJ_PLAYER].push_back(CAbstractFactory<CPlayer>::Create());
 	//dynamic_cast<CPlayer*>(m_ObjList[OBJ_PLAYER].front())->Set_BulletList(&m_ObjList[OBJ_BULLET]);
 	
@@ -89,6 +91,7 @@ void CMainGame::Release(void)
 	CObjMgr::Get_Instance()->Destroy_Instance();
 	CKeyMgr::Get_Instance()->Destroy_Instance();
 	CSceneMgr::Get_Instance()->Destroy_Instance();
+	CSoundMgr::Get_Instance()->Destroy_Instance();
 	CBmpMgr::Get_Instance()->Destroy_Instance();
 	ReleaseDC(g_hWnd, m_hDC);	
 }

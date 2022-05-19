@@ -20,3 +20,10 @@ typedef struct tagFrame
 	DWORD	dwTime;				// 스프라이트 위치가 변경되는 시간 
 
 }FRAME;
+
+typedef struct statInfo
+{
+	int		iHp;
+	int		iMaxHp;
+	int		iAt;
+};

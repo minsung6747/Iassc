@@ -28,7 +28,7 @@ void CBullet::Initialize(void)
 
 	m_fSpeed = 7.f;
 
-
+	m_tStatInfo = { 0,0,1 };
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Bullet.bmp", L"Bullet");
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/BulletDie.bmp", L"BulletDie");
 

@@ -35,9 +35,12 @@ public:
 
 	void Release();
 
+public:
+	void PlusCoin();
 private:
 	static CGameMgr* m_pInstance;
-	int	m_iScore;
+	
+	int iCoin;
 	float time;
 
 };

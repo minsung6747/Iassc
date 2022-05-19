@@ -153,6 +153,7 @@
     <ClInclude Include="BmpMgr.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Block3.h" />
+    <ClInclude Include="Coin.h" />
     <ClInclude Include="CollisionMgr.h" />
     <ClInclude Include="Ddong.h" />
     <ClInclude Include="Door1_4.h" />
@@ -205,6 +206,7 @@
     <ClCompile Include="Block.cpp" />
     <ClCompile Include="Block2.cpp" />
     <ClCompile Include="Block3.cpp" />
+    <ClCompile Include="Coin.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="MonstroBullet.cpp" />
     <ClCompile Include="Monstro.cpp" />

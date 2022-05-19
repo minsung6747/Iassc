@@ -40,7 +40,8 @@ public:
 	void	Release();
 
 public:
-	
+	void RenderCoin(int _iCoin);
+	void Move_Frame();
 
 private:
 	static CUIMgr* m_pInstance;
@@ -48,8 +49,10 @@ private:
 	
 	int		m_iScore;
 	int		m_iLifeCount;
-
+	FRAME		m_tFrame;
 	
+	float UIcount_fCX;
+	float UIcount_fCY;
 
 	int		iR;
 	int		iG;

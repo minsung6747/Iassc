@@ -13,3 +13,5 @@
 #define		VK_MAX		 0xff
 
 extern HWND			g_hWnd;
+
+extern float		g_fSound;

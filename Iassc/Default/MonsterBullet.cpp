@@ -19,7 +19,7 @@ void CMonsterBullet::Initialize(void)
 	m_pFrameKey = L"MBullet";
 
 	m_fSpeed = 2.f;
-
+	m_tStatInfo = { 0,0,1 };
 	m_dwBulletDie = GetTickCount();
 }
 
@@ -31,9 +31,6 @@ int CMonsterBullet::Update(void)
 	if (m_bDead)
 		return OBJ_DEAD;
 	
-	
-
-
 	m_pTarget = CObjMgr::Get_Instance()->Get_Target(OBJ_PLAYER, this);
 
 	if (m_pTarget)

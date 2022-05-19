@@ -20,6 +20,7 @@ void CPlayer::Initialize(void)
 {
 	m_tInfo.fX = 400.f;
 	m_tInfo.fY = 300.f;
+	statInfo PlayerStat = { 6,6,1 };
 
 	m_tInfo.fCX = 66.f;
 	m_tInfo.fCY = 55.f;

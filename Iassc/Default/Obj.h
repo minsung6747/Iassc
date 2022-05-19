@@ -18,9 +18,11 @@ public:
 	void		Set_Dead() { m_bDead = true; }
 	void		Set_Angle(float _fAngle) { m_fAngle = _fAngle; }
 	virtual void		Set_Target(CObj* _pTarget) { m_pTarget = _pTarget; }
+	void		Set_StatInfo(statInfo _tInfo) { m_tStatInfo = _tInfo; }
 
 	void		Set_PosX(float _fX) { m_tInfo.fX += _fX; }
 	void		Set_PosY(float _fY) { m_tInfo.fY += _fY; }
+	void		Set_Theta(float _fTheta) { m_fTheta = _fTheta; }
 
 	void		Set_FrameKey(TCHAR* pFrameKey) { m_pFrameKey = pFrameKey; }
 
@@ -29,6 +31,7 @@ public:
 
 	const INFO& Get_Info(void) const { return m_tInfo; }
 	const RECT& Get_Rect(void) const { return m_tRect; }
+	statInfo& Get_StatInfo(void) { return m_tStatInfo; }
 
 	
 
@@ -53,7 +56,7 @@ protected:
 	INFO		m_tInfo;
 	RECT		m_tRect;
 	FRAME		m_tFrame;
-
+	statInfo	m_tStatInfo;
 	float		m_fSpeed;
 	float		m_fAngle;
 	float		m_fTheta;

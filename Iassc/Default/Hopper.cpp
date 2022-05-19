@@ -16,7 +16,7 @@ void CHopper::Initialize(void)
 	m_pTarget = nullptr;
 	m_tInfo.fCX = 74;
 	m_tInfo.fCY = 90;
-	
+	m_tStatInfo = { 2,0,1 };
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Hopper.bmp", L"Hopper");
 	m_pFrameKey = L"Hopper";
 	m_tFrame.iFrameStart = 0;
@@ -99,5 +99,12 @@ void CHopper::Release(void)
 
 void CHopper::OnCollision(CObj* other)
 {
-	Set_Dead();
+	statInfo& GetBullet = other->Get_StatInfo();
+
+	m_tStatInfo.iHp -= GetBullet.iAt;
+
+	if (m_tStatInfo.iHp <= 0)
+	{
+		Set_Dead();
+	}
 }

@@ -17,6 +17,8 @@ void CFly::Initialize(void)
     m_tInfo.fCY = 30;
     CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Fly.bmp", L"Fly");
 	
+	m_tStatInfo = { 2,0,1 };
+
 	m_tFrame.iFrameStart = 0;
 	m_tFrame.iFrameEnd = 1;  //가로
 	m_tFrame.iMotion = 0;    //세로
@@ -92,5 +94,12 @@ void CFly::Release(void)
 
 void CFly::OnCollision(CObj* other)
 {
-	Set_Dead();
+	statInfo& GetBullet = other->Get_StatInfo();
+	
+	m_tStatInfo.iHp -= GetBullet.iAt;
+	
+	if (m_tStatInfo.iHp <= 0)
+	{
+		Set_Dead();
+	}
 }

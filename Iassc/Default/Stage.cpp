@@ -16,6 +16,8 @@
 #include "Mack.h"
 #include "Door1_4.h"
 #include "Monstro.h"
+#include "SoundMgr.h"
+#include "Coin.h"
 CStage::CStage()
 {
 }
@@ -34,13 +36,20 @@ void CStage::Initialize(void)
 	//CObj* pBullet = CAbstractFactory<CBullet>::Create();
 	if (!CObjMgr::Get_Instance()->IsPlayer())
 	{
+		
+
 		CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
+	
 
 	}
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(762, 350));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor1_4>::Create(100, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_ITEM, CAbstractFactory<CCoin>::Create(200, 400));
+
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTRO, CAbstractFactory<CMonstro>::Create(300, 400));
+
+	CSoundMgr::Get_Instance()->PlaySoundW(L"Bgm.wav", SOUND_BGM, g_fSound);
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
 	
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));
@@ -104,6 +113,7 @@ void CStage::Release(void)
 	//CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
 	/*CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);*/
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_DOOR);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_MONSTRO);
 	
 	
 }

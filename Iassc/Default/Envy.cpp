@@ -16,6 +16,8 @@ void CEnvy::Initialize(void)
 	bCheckDir = false;
 	m_tInfo.fCX = 75;
 	m_tInfo.fCY = 74;
+
+	m_tStatInfo = { 5,0,1 };
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Envy.bmp", L"Envy");
 
 	m_pFrameKey = L"Envy";
@@ -118,5 +120,12 @@ void CEnvy::Release(void)
 
 void CEnvy::OnCollision(CObj* other)
 {
-	Set_Dead();
+	statInfo& GetBullet = other->Get_StatInfo();
+
+	m_tStatInfo.iHp -= GetBullet.iAt;
+
+	if (m_tStatInfo.iHp <= 0)
+	{
+		Set_Dead();
+	}
 }
