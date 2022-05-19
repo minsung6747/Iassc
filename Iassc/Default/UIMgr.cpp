@@ -33,15 +33,17 @@ void CUIMgr::Initialize()
 
 void CUIMgr::Update(void)
 {
-	
+	m_pInstance->Update();
 }
 
 void CUIMgr::Render(HDC hDC)
 {
+	
 }
 
 void CUIMgr::Release()
 {
+	Safe_Delete(m_pInstance);
 }
 
 void CUIMgr::RenderCoin(int _iCoin)

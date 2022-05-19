@@ -47,9 +47,11 @@ void CStage::Initialize(void)
 	CObjMgr::Get_Instance()->Add_Object(OBJ_ITEM, CAbstractFactory<CCoin>::Create(200, 400));
 
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTRO, CAbstractFactory<CMonstro>::Create(300, 400));
+	
 
 	CSoundMgr::Get_Instance()->PlaySoundW(L"Bgm.wav", SOUND_BGM, g_fSound);
+
+
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_PLAYER, CAbstractFactory<CPlayer>::Create());
 	
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock>::Create(300, 400));

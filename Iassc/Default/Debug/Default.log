@@ -1,3 +1,6 @@
-﻿  ObjMgr.cpp
-C:\Users\mi_in\Desktop\새 폴더\Iassc\Default\Struct.h(29,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'statInfo' 왼쪽은 무시됩니다.
-  Default.vcxproj -> C:\Users\mi_in\Desktop\새 폴더\Iassc\Debug\Default.exe
+﻿  Stage.cpp
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Struct.h(29,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'statInfo' 왼쪽은 무시됩니다.
+  Stage_Boss.cpp
+C:\Users\MinStar\Desktop\Iassc\Iassc\Default\Struct.h(29,2): warning C4091: 'typedef ': 변수를 선언하지 않으면 'statInfo' 왼쪽은 무시됩니다.
+  코드를 생성하고 있습니다...
+  Default.vcxproj -> C:\Users\MinStar\Desktop\Iassc\Iassc\Debug\Default.exe

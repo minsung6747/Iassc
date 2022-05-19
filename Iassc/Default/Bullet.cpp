@@ -2,7 +2,7 @@
 #include "Bullet.h"
 #include "BmpMgr.h"
 #include "Block.h"
-
+#include "SoundMgr.h"
 CBullet::CBullet()
 {
 }
@@ -18,6 +18,7 @@ void CBullet::Initialize(void)
 	 m_bDead = false;
 	 bCheckBullet = 0;
 	 bDeadEffectTime=0;
+	
 
 
 	m_tInfo.fCX = 27.f;
@@ -76,6 +77,8 @@ void CBullet::Late_Update(void)
 	{
 		//m_bDead=true;
 		bCheckBullet++;
+		
+
 	}
 }
 
@@ -111,12 +114,14 @@ if (1 <= bCheckBullet)
 		(int)fBulletDie_fCY,
 		RGB(255, 255, 255));			// 제거하고자 하는 색상
 
-
+	CSoundMgr::Get_Instance()->PlaySoundW(L"BulletEnd.wav", SOUND_PLAYER, g_fSound);
 	bDeadEffectTime++;
+
 	if (bDeadEffectTime >= 100)
 	{
 		
 		m_bDead = true;
+		
 	}
 	m_fSpeed = 0;
 }
@@ -147,6 +152,7 @@ void CBullet::Release(void)
 void CBullet::OnCollision(CObj* other)
 {
 	Set_Dead();
+	
 }
 
 

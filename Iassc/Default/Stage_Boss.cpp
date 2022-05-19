@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Stage_Boss.h"
 #include "BmpMgr.h"
+#include "SoundMgr.h"
+#include "AbstractFactory.h"
+#include "Monstro.h"
 CStage_Boss::CStage_Boss()
 {
 }
@@ -12,7 +15,12 @@ CStage_Boss::~CStage_Boss()
 
 void CStage_Boss::Initialize(void)
 {
+	CSoundMgr::Get_Instance()->StopSound(SOUND_BGM);
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage_Boss.bmp", L"Stage_Boss");
+	CSoundMgr::Get_Instance()->PlaySoundW(L"BossStart.wav", SOUND_BOSS, g_fSound);
+
+	CObjMgr::Get_Instance()->Add_Object(OBJ_MONSTRO, CAbstractFactory<CMonstro>::Create(300, 400));
+
 
 }
 

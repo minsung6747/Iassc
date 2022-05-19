@@ -14,6 +14,9 @@ public:
 	{
 		if (!m_pInstance)
 		{
+
+
+
 			m_pInstance = new CUIMgr;
 		}
 
