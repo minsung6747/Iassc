@@ -10,7 +10,7 @@
 #include "Fly.h"
 #include "Block2.h"
 #include "Ddong.h"
-#include "Door2_3.h"
+#include "BackDoor3_2.h"
 #include "Envy.h"
 #include "Door3_Boss.h"
 CStage3::CStage3()
@@ -26,6 +26,8 @@ void CStage3::Initialize(void)
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage3.bmp", L"Stage3");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor3_Boss>::Create(760, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CBackDoor3_2>::Create(50, 350));
+
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(300, 300));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_ENVY, CAbstractFactory<CEnvy>::Create(350, 350));

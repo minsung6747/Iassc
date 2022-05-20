@@ -21,7 +21,7 @@ typedef struct tagFrame
 
 }FRAME;
 
-typedef struct statInfo
+struct statInfo
 {
 	int		iHp;
 	int		iMaxHp;

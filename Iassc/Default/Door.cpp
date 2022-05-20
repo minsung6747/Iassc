@@ -60,12 +60,13 @@ void CDoor::OnCollision(DIRECTION eDir, CObj* other)
 	if (eDir == DIR_LEFT)
 	{
 		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE2);
+		CObjMgr::Get_Instance()->Get_Player()->Set_Pos(130, 350);
 		return;
 	}
-	else if (eDir == DIR_RIGHT)
+	/*else if (eDir == DIR_RIGHT)
 	{
 		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE);
 		CObjMgr::Get_Instance()->Get_Player()->Set_Pos(130, 350);
 		return;
-	}
+	}*/
 }

@@ -7,7 +7,7 @@
 #include "BmpMgr.h"
 #include "SceneMgr.h"
 #include "SoundMgr.h"
-
+int exIhowfly = 0;
 float g_fSound = 1.f;
 CMainGame::CMainGame()
 	: m_dwTime(GetTickCount())

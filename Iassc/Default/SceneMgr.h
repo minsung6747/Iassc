@@ -41,6 +41,7 @@ public:
 private:
 	static CSceneMgr* m_pInstance;
 	CScene* m_pScene;
+	CScene* m_pCopyScene;
 
 	SCENEID			m_eCurScene;
 	SCENEID			m_ePreScene;

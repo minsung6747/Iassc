@@ -124,11 +124,11 @@
     <Filter Include="98.Design\99. Header">
       <UniqueIdentifier>{fbe2a4a3-fba0-4c49-8f48-026bfd31270f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="01. Obj\06. Door\00. Block">
-      <UniqueIdentifier>{f6f5434b-0cc5-437f-90fd-fb3cf59d9be7}</UniqueIdentifier>
-    </Filter>
     <Filter Include="01. Obj\04. Item">
       <UniqueIdentifier>{5f141239-ecc6-4d31-a491-cdc914cf6c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Obj\03. Obstacle\00. Block">
+      <UniqueIdentifier>{f6f5434b-0cc5-437f-90fd-fb3cf59d9be7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -214,7 +214,7 @@
       <Filter>98.Design\SceneMgr\00.Scene\02.Stage2</Filter>
     </ClInclude>
     <ClInclude Include="Block.h">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClInclude>
     <ClInclude Include="Fire.h">
       <Filter>01. Obj\03. Obstacle\01. Fire</Filter>
@@ -238,7 +238,7 @@
       <Filter>98.Design\GameMgr</Filter>
     </ClInclude>
     <ClInclude Include="Block2.h">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClInclude>
     <ClInclude Include="Ddong.h">
       <Filter>01. Obj\03. Obstacle\02. Ddong</Filter>
@@ -256,7 +256,7 @@
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
     <ClInclude Include="Block3.h">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClInclude>
     <ClInclude Include="Door4_5.h">
       <Filter>01. Obj\06. Door</Filter>
@@ -290,6 +290,12 @@
     </ClInclude>
     <ClInclude Include="Coin.h">
       <Filter>01. Obj\04. Item</Filter>
+    </ClInclude>
+    <ClInclude Include="BackDoor2_1.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
+    <ClInclude Include="BackDoor3_2.h">
+      <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -369,10 +375,10 @@
       <Filter>98.Design\GameMgr</Filter>
     </ClCompile>
     <ClCompile Include="Block2.cpp">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClCompile>
     <ClCompile Include="Block.cpp">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClCompile>
     <ClCompile Include="Ddong.cpp">
       <Filter>01. Obj\03. Obstacle\02. Ddong</Filter>
@@ -390,7 +396,7 @@
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
     <ClCompile Include="Block3.cpp">
-      <Filter>01. Obj\06. Door\00. Block</Filter>
+      <Filter>01. Obj\03. Obstacle\00. Block</Filter>
     </ClCompile>
     <ClCompile Include="Door4_5.cpp">
       <Filter>01. Obj\06. Door</Filter>
@@ -424,6 +430,12 @@
     </ClCompile>
     <ClCompile Include="Coin.cpp">
       <Filter>01. Obj\04. Item</Filter>
+    </ClCompile>
+    <ClCompile Include="BackDoor2_1.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="BackDoor3_2.cpp">
+      <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

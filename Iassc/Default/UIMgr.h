@@ -14,9 +14,6 @@ public:
 	{
 		if (!m_pInstance)
 		{
-
-
-
 			m_pInstance = new CUIMgr;
 		}
 
@@ -43,7 +40,7 @@ public:
 	void	Release();
 
 public:
-	void RenderCoin(int _iCoin);
+	void RenderCoin(HDC hDC,int _iCoin);
 	void Move_Frame();
 
 private:

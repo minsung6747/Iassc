@@ -18,9 +18,9 @@ CUIMgr::~CUIMgr()
 void CUIMgr::Initialize()
 {
 	UIcount_fCX = 12;
-	UIcount_fCY = 270;
+	UIcount_fCY = 27;
 
-	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Fly.bmp", L"Fly");
+	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/UI_count.bmp", L"UI_count");
 
 	
 	m_tFrame.iFrameStart = 0;
@@ -33,7 +33,7 @@ void CUIMgr::Initialize()
 
 void CUIMgr::Update(void)
 {
-	m_pInstance->Update();
+	//m_pInstance->Update();
 }
 
 void CUIMgr::Render(HDC hDC)
@@ -46,9 +46,23 @@ void CUIMgr::Release()
 	Safe_Delete(m_pInstance);
 }
 
-void CUIMgr::RenderCoin(int _iCoin)
+void CUIMgr::RenderCoin(HDC hDC,int _iCoin)
 {
-
+	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"UI_count");
+	++m_tFrame.iMotion;
+	Move_Frame();
+	//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
+	GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
+		500,	// 2,3 인자 :  복사받을 위치 X, Y
+		300,
+		int(UIcount_fCX),				// 4,5 인자 : 복사받을 가로, 세로 길이
+		int(UIcount_fCY),
+		hMemDC,							// 비트맵을 가지고 있는 DC
+		m_tFrame.iFrameStart * (int)UIcount_fCX,								// 비트맵 출력 시작 좌표, X,Y
+		m_tFrame.iMotion * (int)UIcount_fCY,
+		(int)(UIcount_fCX),				// 복사할 비트맵의 가로, 세로 길이
+		(int)(UIcount_fCY),
+		RGB(255, 255, 255));			// 제거하고자 하는 색상
 }
 
 

@@ -23,6 +23,7 @@ bool CObjMgr::IsPlayer()
 	return false;
 
 }
+
 CObj* CObjMgr::Get_Target(OBJID eID, CObj* pObj)
 {
 	if (m_ObjList[eID].empty())
