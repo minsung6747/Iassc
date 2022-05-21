@@ -40,7 +40,7 @@ public:
 	void	Release();
 
 public:
-	void RenderCoin(HDC hDC,int _iCoin);
+	void RenderCoin(HDC hDC);
 	void Move_Frame();
 
 private:

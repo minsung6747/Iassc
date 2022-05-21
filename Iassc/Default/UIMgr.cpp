@@ -46,15 +46,19 @@ void CUIMgr::Release()
 	Safe_Delete(m_pInstance);
 }
 
-void CUIMgr::RenderCoin(HDC hDC,int _iCoin)
+void CUIMgr::RenderCoin(HDC hDC)
 {
+
+	
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"UI_count");
-	++m_tFrame.iMotion;
+
+	m_tFrame.iMotion = CGameMgr::Get_Instance()->Set_Coin();
+	
 	Move_Frame();
 	//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
-		500,	// 2,3 인자 :  복사받을 위치 X, Y
-		300,
+		360,	// 2,3 인자 :  복사받을 위치 X, Y
+		10,
 		int(UIcount_fCX),				// 4,5 인자 : 복사받을 가로, 세로 길이
 		int(UIcount_fCY),
 		hMemDC,							// 비트맵을 가지고 있는 DC
@@ -62,7 +66,9 @@ void CUIMgr::RenderCoin(HDC hDC,int _iCoin)
 		m_tFrame.iMotion * (int)UIcount_fCY,
 		(int)(UIcount_fCX),				// 복사할 비트맵의 가로, 세로 길이
 		(int)(UIcount_fCY),
-		RGB(255, 255, 255));			// 제거하고자 하는 색상
+		RGB(0, 0, 255));			// 제거하고자 하는 색상
+
+	
 }
 
 

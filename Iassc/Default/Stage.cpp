@@ -18,7 +18,7 @@
 #include "Monstro.h"
 #include "SoundMgr.h"
 #include "Coin.h"
-
+#include "UIMgr.h"
 
 CStage::CStage()
 {
@@ -32,7 +32,7 @@ CStage::~CStage()
 void CStage::Initialize(void)
 {
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_FLY); 
-
+	CUIMgr::Get_Instance()->Initialize();
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage.bmp", L"Stage");
 
@@ -103,9 +103,11 @@ void CStage::Late_Update(void)
 
 void CStage::Render(HDC hDC)
 {
+	
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Stage");
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
+	CUIMgr::Get_Instance()->RenderCoin(hDC);
 }
 
 void CStage::Release(void)

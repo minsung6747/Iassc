@@ -13,6 +13,7 @@
 #include "Door.h"
 #include "Door2_3.h"
 #include "BackDoor2_1.h"
+#include "UIMgr.h"
 
 
 CStage2::CStage2()
@@ -27,6 +28,7 @@ CStage2::~CStage2()
 void CStage2::Initialize(void)
 {
 	
+	CUIMgr::Get_Instance()->Initialize();
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage2.bmp", L"Stage2");
 	CObjMgr::Get_Instance()->Get_Player()->Set_Pos(150, 350);
@@ -118,6 +120,8 @@ void CStage2::Render(HDC hDC)
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Stage2");
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
+	CUIMgr::Get_Instance()->RenderCoin(hDC);
+
 }
 
 void CStage2::Release(void)

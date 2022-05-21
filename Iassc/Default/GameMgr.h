@@ -37,6 +37,7 @@ public:
 
 public:
 	void PlusCoin();
+	int Set_Coin() { return iCoin; }
 private:
 	static CGameMgr* m_pInstance;
 	

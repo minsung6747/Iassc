@@ -27,5 +27,5 @@ void CGameMgr::PlusCoin()
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"UI_count");
 
 	++iCoin;
-	CUIMgr::Get_Instance()->RenderCoin(hMemDC, iCoin);
+	CUIMgr::Get_Instance()->RenderCoin(hMemDC);
 }
