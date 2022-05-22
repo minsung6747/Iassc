@@ -58,7 +58,7 @@ void CUIMgr::RenderCoin(HDC hDC)
 	//Rectangle(hDC, m_tRect.left, m_tRect.top, m_tRect.right, m_tRect.bottom);
 	GdiTransparentBlt(hDC, 					// 복사 받을, 최종적으로 그림을 그릴 DC
 		360,	// 2,3 인자 :  복사받을 위치 X, Y
-		10,
+		8,
 		int(UIcount_fCX),				// 4,5 인자 : 복사받을 가로, 세로 길이
 		int(UIcount_fCY),
 		hMemDC,							// 비트맵을 가지고 있는 DC

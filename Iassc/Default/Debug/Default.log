@@ -1,3 +1,4 @@
-﻿  UIMgr.cpp
-C:\Users\mi_in\OneDrive\문서\GitHub\Iassc\Iassc\Iassc\Default\GameMgr.h(33,26): warning C4244: 'return': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Default.vcxproj -> C:\Users\mi_in\OneDrive\문서\GitHub\Iassc\Iassc\Iassc\Debug\Default.exe
+﻿  BackDoor4_1.cpp
+  Stage4.cpp
+  코드를 생성하고 있습니다...
+  Default.vcxproj -> C:\Users\MinStar\Desktop\Iassc\Iassc\Debug\Default.exe

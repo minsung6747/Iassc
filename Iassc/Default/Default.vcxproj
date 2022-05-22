@@ -150,6 +150,8 @@
     <ClInclude Include="AbstractFactory.h" />
     <ClInclude Include="BackDoor2_1.h" />
     <ClInclude Include="BackDoor3_2.h" />
+    <ClInclude Include="BackDoor4_1.h" />
+    <ClInclude Include="BackDoor5_4.h" />
     <ClInclude Include="Block.h" />
     <ClInclude Include="Block2.h" />
     <ClInclude Include="BmpMgr.h" />
@@ -210,6 +212,8 @@
     <ClCompile Include="Block2.cpp" />
     <ClCompile Include="Block3.cpp" />
     <ClCompile Include="BackDoor3_2.cpp" />
+    <ClCompile Include="BackDoor4_1.cpp" />
+    <ClCompile Include="BackDoor5_4.cpp" />
     <ClCompile Include="Coin.cpp" />
     <ClCompile Include="SoundMgr.cpp" />
     <ClCompile Include="MonstroBullet.cpp" />

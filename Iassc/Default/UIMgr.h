@@ -51,6 +51,7 @@ private:
 	int		m_iLifeCount;
 	FRAME		m_tFrame;
 	
+	
 	float UIcount_fCX;
 	float UIcount_fCY;
 

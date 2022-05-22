@@ -16,6 +16,8 @@
 #include "Mack.h"
 #include "Block3.h"
 #include "Door4_5.h"
+#include "BackDoor4_1.h"
+
 CStage4::CStage4()
 {
 }
@@ -29,6 +31,7 @@ void CStage4::Initialize(void)
 {
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage4.bmp", L"Stage4");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor4_5>::Create(400, 145));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CBackDoor4_1>::Create(760,350));
 
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 200));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 500));
