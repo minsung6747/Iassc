@@ -303,6 +303,9 @@
     <ClInclude Include="BackDoor5_4.h">
       <Filter>01. Obj\06. Door</Filter>
     </ClInclude>
+    <ClInclude Include="BackDoorItem_5.h">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -447,6 +450,9 @@
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
     <ClCompile Include="BackDoor5_4.cpp">
+      <Filter>01. Obj\06. Door</Filter>
+    </ClCompile>
+    <ClCompile Include="BackDoorItem_5.cpp">
       <Filter>01. Obj\06. Door</Filter>
     </ClCompile>
   </ItemGroup>

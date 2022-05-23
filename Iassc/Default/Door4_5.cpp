@@ -59,7 +59,7 @@ void CDoor4_5::OnCollision(DIRECTION eDir, CObj* other)
 	if (eDir == DIR_DOWN)
 	{
 		CSceneMgr::Get_Instance()->Scene_Change(SC_STAGE5);
-		CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400, 500);
+		CObjMgr::Get_Instance()->Get_Player()->Set_Pos(400, 490);
 		return;
 	}
 }

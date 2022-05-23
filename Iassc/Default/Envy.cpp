@@ -127,5 +127,6 @@ void CEnvy::OnCollision(CObj* other)
 	if (m_tStatInfo.iHp <= 0)
 	{
 		Set_Dead();
+		++exIhowEnvy;
 	}
 }

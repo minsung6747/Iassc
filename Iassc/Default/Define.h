@@ -17,3 +17,6 @@ extern HWND			g_hWnd;
 extern float		g_fSound;
 
 extern int			exIhowfly;
+extern int			exIhowEnvy;
+extern int			exIhowMack;
+extern int			exIhowHopper;

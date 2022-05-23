@@ -120,4 +120,5 @@ void CStage::Release(void)
 	//CObjMgr::Get_Instance()->Delete_ID(OBJ_MONSTRO);
 	
 	
+	
 }

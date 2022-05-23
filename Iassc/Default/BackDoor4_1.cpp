@@ -15,9 +15,7 @@ CBackDoor4_1::~CBackDoor4_1()
 void CBackDoor4_1::Initialize(void)
 {
 	m_tInfo.fCX = 52;
-	m_t
-		
-		Info.fCY = 102;
+	m_tInfo.fCY = 102;
 
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/BackDoor4_1.bmp", L"BackDoor4_1");
 

@@ -8,7 +8,11 @@
 #include "SceneMgr.h"
 #include "SoundMgr.h"
 int exIhowfly = 0;
+int exIhowEnvy = 0;
+int exIhowMack = 0;
+int exIhowHopper = 0;
 float g_fSound = 1.f;
+
 CMainGame::CMainGame()
 	: m_dwTime(GetTickCount())
 {

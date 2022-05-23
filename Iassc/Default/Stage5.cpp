@@ -18,6 +18,8 @@
 #include "Door4_5.h"
 #include "Ddong.h"
 #include "DoorItem.h"
+#include "BackDoor5_4.h"
+#include "UIMgr.h"
 CStage5::CStage5()
 {
 }
@@ -29,8 +31,11 @@ CStage5::~CStage5()
 
 void CStage5::Initialize(void)
 {
+	CUIMgr::Get_Instance()->Initialize();
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage5.bmp", L"Stage5");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoorItem>::Create(40, 350));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CBackDoor5_4>::Create(400, 548));
 
 	
 	CObjMgr::Get_Instance()->Add_Object(OBJ_OBSTACLE, CAbstractFactory<CDdong>::Create(100, 200));
@@ -38,16 +43,19 @@ void CStage5::Initialize(void)
 	CObjMgr::Get_Instance()->Add_Object(OBJ_OBSTACLE, CAbstractFactory<CDdong>::Create(700, 500));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_OBSTACLE, CAbstractFactory<CDdong>::Create(700, 200));
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_FLY, CAbstractFactory<CFly>::Create(400, 300));
-
-	CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(200, 300));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 300));
-
-	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_FLY))
+	
+	if (exIhowHopper < 3)
 	{
-		iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
-
+		CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(200, 300));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(400, 300));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_HOPPER, CAbstractFactory<CHopper>::Create(600, 300));
 	}
+
+	//for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_FLY))
+	//{
+	//	iter->Set_Target(CObjMgr::Get_Instance()->Get_Player());          //STAGE OBJLIST
+
+	//}
 
 	for (auto& iter : *CObjMgr::Get_Instance()->Get_List(OBJ_HOPPER))
 	{
@@ -74,6 +82,9 @@ void CStage5::Render(HDC hDC)
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Stage5");
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
+	CUIMgr::Get_Instance()->RenderCoin(hDC);
+
+
 }
 
 

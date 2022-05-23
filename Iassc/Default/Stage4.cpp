@@ -17,6 +17,7 @@
 #include "Block3.h"
 #include "Door4_5.h"
 #include "BackDoor4_1.h"
+#include "UIMgr.h"
 
 CStage4::CStage4()
 {
@@ -29,15 +30,18 @@ CStage4::~CStage4()
 
 void CStage4::Initialize(void)
 {
+	CUIMgr::Get_Instance()->Initialize();
+
 	CBmpMgr::Get_Instance()->Insert_Bmp(L"../Image/Stage4.bmp", L"Stage4");
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor4_5>::Create(400, 145));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CBackDoor4_1>::Create(760,350));
-
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 200));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 500));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(700, 500));
-	CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(700, 200));
-
+	if (exIhowMack < 4)
+	{
+		CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 200));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(100, 500));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(700, 500));
+		CObjMgr::Get_Instance()->Add_Object(OBJ_MACK, CAbstractFactory<CMack>::Create(700, 200));
+	}
 
 	//CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 400));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_BLOCK, CAbstractFactory<CBlock3>::Create(300, 450));
@@ -68,6 +72,8 @@ void CStage4::Render(HDC hDC)
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Stage4");
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
+	CUIMgr::Get_Instance()->RenderCoin(hDC);
+
 }
 
 void CStage4::Release(void)

@@ -107,6 +107,7 @@ void CMack::OnCollision(CObj* other)
 	if (m_tStatInfo.iHp <= 0)
 	{
 		Set_Dead();
+		++exIhowMack;
 	}
 
 }
