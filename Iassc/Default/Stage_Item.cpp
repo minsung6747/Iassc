@@ -47,6 +47,8 @@ void CStage_Item::Render(HDC hDC)
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
 	CUIMgr::Get_Instance()->RenderCoin(hDC);
+	CUIMgr::Get_Instance()->RenderArrows(hDC,false);
+
 
 }
 

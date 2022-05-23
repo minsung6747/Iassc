@@ -4,6 +4,7 @@
 #include "SoundMgr.h"
 #include "AbstractFactory.h"
 #include "Monstro.h"
+#include "UIMgr.h"
 CStage_Boss::CStage_Boss()
 {
 }
@@ -39,6 +40,10 @@ void CStage_Boss::Render(HDC hDC)
 	HDC		hMemDC = CBmpMgr::Get_Instance()->Find_Image(L"Stage_Boss");
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
+	CUIMgr::Get_Instance()->RenderCoin(hDC);
+
+	CUIMgr::Get_Instance()->RenderArrows(hDC,false);
+
 }
 
 void CStage_Boss::Release(void)

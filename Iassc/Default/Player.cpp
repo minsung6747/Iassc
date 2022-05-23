@@ -18,6 +18,7 @@ CPlayer::~CPlayer()
 
 void CPlayer::Initialize(void)
 {
+	bTripleCheck = false;
 	m_tInfo.fX = 400.f;
 	m_tInfo.fY = 300.f;
 	statInfo PlayerStat = { 6,6,1 };
@@ -156,40 +157,88 @@ void CPlayer::Key_Input(void)
 
 	 if (CKeyMgr::Get_Instance()->Key_Up('W'))
 	{
-		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_UP));
-		m_pFrameKey = L"SHOT_UP";
-		m_eCurState = SHOT_UP;
+		 if (bTripleCheck == false)
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(90));
+			 m_pFrameKey = L"SHOT_UP";
+			 m_eCurState = SHOT_UP;
+		 }
+		 else 
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(87));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(90));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(93));
+			 m_pFrameKey = L"SHOT_UP";
+			 m_eCurState = SHOT_UP;
+		 }
 	}
 
 	 if (CKeyMgr::Get_Instance()->Key_Up('A'))
 	{
-		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_LEFT));
-		m_pFrameKey = L"SHOT_LEFT";
-		m_eCurState = SHOT_LEFT;
+		 if (bTripleCheck == false)
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(180));
+			 m_pFrameKey = L"SHOT_LEFT";
+			 m_eCurState = SHOT_LEFT;
+		 }
+		 else
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(187));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(180));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(183));
+			 m_pFrameKey = L"SHOT_UP";
+			 m_eCurState = SHOT_UP;
+
+		 }
 	}
 	 if (CKeyMgr::Get_Instance()->Key_Up('S'))
 	{
-		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_DOWN));
-		m_pFrameKey = L"SHOT_DOWN";
-		m_eCurState = SHOT_DOWN;
+		 if (bTripleCheck == false)
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(270));
+			 m_pFrameKey = L"SHOT_DOWN";
+			 m_eCurState = SHOT_DOWN;
+		 }
+		 else
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(267));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(270));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(273));
+			 m_pFrameKey = L"SHOT_DOWN";
+			 m_eCurState = SHOT_DOWN;
+		 }
+
+		 
 	}
 
 	 if (CKeyMgr::Get_Instance()->Key_Up('D'))
 	{
-		CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(DIR_RIGHT));
-		m_pFrameKey = L"SHOT_RIGHT";
-		m_eCurState =SHOT_RIGHT;
+		 if (bTripleCheck == false)
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(360));
+			 m_pFrameKey = L"SHOT_RIGHT";
+			 m_eCurState = SHOT_RIGHT;
+		 }
+		 else
+		 {
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(357));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(360));
+			 CObjMgr::Get_Instance()->Add_Object(OBJ_BULLET, Create_Bullet(363));
+			 m_pFrameKey = L"SHOT_RIGHT";
+			 m_eCurState = SHOT_RIGHT;
+
+		 }
 	}
 
 }
-CObj* CPlayer::Create_Bullet(DIRECTION eDir)
+CObj* CPlayer::Create_Bullet(float m_fAngle)
 {
 	/*CObj*		pBullet = new CBullet;
 	pBullet->Set_Pos(m_tInfo.fX, m_tInfo.fY);
 	pBullet->Initialize();
 	pBullet->Set_Dir(eDir);*/
 
-	CObj*		pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tInfo.fY, eDir);
+	CObj*		pBullet = CAbstractFactory<CBullet>::Create(m_tInfo.fX, m_tInfo.fY, m_fAngle);
 
 	return pBullet;
 }

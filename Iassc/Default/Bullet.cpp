@@ -42,24 +42,34 @@ int CBullet::Update(void)
 		return OBJ_DEAD;
 
 
-
-	switch (m_eDir)
+	m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
+	m_tInfo.fY -= m_fSpeed * sinf((m_fAngle * PI) / 180.f);
+	/*switch (m_eDir)
 	{
 	case DIR_LEFT:
-		m_tInfo.fX -= m_fSpeed;
+		m_fAngle = 180.f;
+		m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
+		m_tInfo.fY -= m_fSpeed * sinf((m_fAngle * PI) / 180.f);
 		break;
 	case DIR_UP:
-		m_tInfo.fY -= m_fSpeed;
+		m_fAngle = 90.f;
+		m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
+		m_tInfo.fY -= m_fSpeed * sinf((m_fAngle * PI) / 180.f);
 		break;
 		
 	case DIR_RIGHT:
-		m_tInfo.fX += m_fSpeed;
+		m_fAngle = 0.f;
+		m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
+		m_tInfo.fY -= m_fSpeed * sinf((m_fAngle * PI) / 180.f);
 		break;
 
 	case DIR_DOWN:
-		m_tInfo.fY += m_fSpeed;
+		m_fAngle = 270.f;
+		m_tInfo.fX += m_fSpeed * cosf((m_fAngle * PI) / 180.f);
+		m_tInfo.fY -= m_fSpeed * sinf((m_fAngle * PI) / 180.f);
+	
 		break;
-	}
+	}*/
 
 	// Á¶°Ç ? 
 		
@@ -152,6 +162,7 @@ void CBullet::Release(void)
 void CBullet::OnCollision(CObj* other)
 {
 	Set_Dead();
+
 	
 }
 

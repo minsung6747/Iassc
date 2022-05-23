@@ -19,7 +19,8 @@
 #include "SoundMgr.h"
 #include "Coin.h"
 #include "UIMgr.h"
-
+#include "Bomb.h"
+#include "TripleShot.h"
 CStage::CStage()
 {
 }
@@ -44,7 +45,10 @@ void CStage::Initialize(void)
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor>::Create(762, 350));
 	CObjMgr::Get_Instance()->Add_Object(OBJ_DOOR, CAbstractFactory<CDoor1_4>::Create(50, 350));
 
-	CObjMgr::Get_Instance()->Add_Object(OBJ_ITEM, CAbstractFactory<CCoin>::Create(200, 400));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_COIN, CAbstractFactory<CCoin>::Create(200, 400));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_BOMB, CAbstractFactory<CBomb>::Create(300, 400));
+	CObjMgr::Get_Instance()->Add_Object(OBJ_TRIPLESHOT, CAbstractFactory<CTripleShot>::Create(400, 400));
+
 
 
 	
@@ -108,6 +112,9 @@ void CStage::Render(HDC hDC)
 	BitBlt(hDC, 0, 0, WINCX, WINCY, hMemDC, 0, 0, SRCCOPY); //그림을 그리는것 이미지를 그리는 함수 
 	CObjMgr::Get_Instance()->Render(hDC);
 	CUIMgr::Get_Instance()->RenderCoin(hDC);
+	CUIMgr::Get_Instance()->RenderArrows(hDC,false);
+	CUIMgr::Get_Instance()->RenderBomb(hDC);
+
 }
 
 void CStage::Release(void)
@@ -117,6 +124,7 @@ void CStage::Release(void)
 	//CObjMgr::Get_Instance()->Delete_ID(OBJ_HOPPER);
 	/*CObjMgr::Get_Instance()->Delete_ID(OBJ_FIRE);*/
 	CObjMgr::Get_Instance()->Delete_ID(OBJ_DOOR);
+	CObjMgr::Get_Instance()->Delete_ID(OBJ_COIN);
 	//CObjMgr::Get_Instance()->Delete_ID(OBJ_MONSTRO);
 	
 	

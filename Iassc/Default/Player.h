@@ -15,7 +15,8 @@ public:
 	{
 		m_pBullet = pBullet;
 	}
-
+	void		Set_tripleShot() { bTripleCheck = true; }
+	bool		Get_tripleShot() { return bTripleCheck; }
 public:
 	virtual void Initialize(void) override;
 	virtual int		Update(void) override;
@@ -25,15 +26,16 @@ public:
 
 private:
 	void		Key_Input(void);
-	CObj*		Create_Bullet(DIRECTION eDir);
+	CObj*		Create_Bullet(float m_fAngle);
 	void		Motion_Change(void);
+	
 
 private:
 	typedef list<CObj*>		BULLETLIST;
 	BULLETLIST*				m_pBullet;
 
 
-
+	bool					bTripleCheck;
 	STATE					m_ePreState;
 	STATE					m_eCurState;
 };

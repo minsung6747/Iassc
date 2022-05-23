@@ -106,7 +106,11 @@ void CObjMgr::Late_Update(void)
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_HOPPER], m_ObjList[OBJ_PLAYER]);
 	CCollisionMgr::Collision_RectEx(m_ObjList[OBJ_ENVY], m_ObjList[OBJ_PLAYER]);
 
-	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_ITEM], m_ObjList[OBJ_PLAYER]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_COIN], m_ObjList[OBJ_PLAYER]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_BOMB], m_ObjList[OBJ_PLAYER]);
+	CCollisionMgr::Collision_Rect(m_ObjList[OBJ_TRIPLESHOT], m_ObjList[OBJ_PLAYER]);
+
+
 
 
 

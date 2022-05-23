@@ -32,15 +32,19 @@ public:
 	
 	int Get_Time() { return time; }
 	void Set_Time(float _time) { time = _time; }
-
+	void Set_bTripleShot();
 	void Release();
 
 public:
 	void PlusCoin();
+	void PlusBomb();
 	int Set_Coin() { return iCoin; }
+	int Set_Bomb() { return iBomb; }
 private:
 	static CGameMgr* m_pInstance;
 	
+	int iBomb;
+	bool bTripleCheck;
 	int iCoin;
 	float time;
 
